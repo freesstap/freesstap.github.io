@@ -1,4 +1,4 @@
-# Free SSTap节点订阅每天更新18.9M/S免费节点订阅链接  更新时间 2024-12-05 10:03:48
+# Free SSTap节点订阅每天更新22M/S免费节点订阅链接  更新时间 2024-12-07 10:21:39
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://freesstap.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://freesstap.github.io/uploads/2024/12/0-20241205.yaml
-- https://freesstap.github.io/uploads/2024/12/1-20241205.yaml
-- https://freesstap.github.io/uploads/2024/12/2-20241205.yaml
-- https://freesstap.github.io/uploads/2024/12/3-20241205.yaml
-- https://freesstap.github.io/uploads/2024/12/4-20241205.yml
+- https://freesstap.github.io/uploads/2024/12/0-20241207.yaml
+- https://freesstap.github.io/uploads/2024/12/1-20241207.yaml
+- https://freesstap.github.io/uploads/2024/12/2-20241207.yaml
+- https://freesstap.github.io/uploads/2024/12/3-20241207.yaml
+- https://freesstap.github.io/uploads/2024/12/4-20241207.yml
 
 ### V2ray订阅链接
 
-- https://freesstap.github.io/uploads/2024/12/0-20241205.txt
-- https://freesstap.github.io/uploads/2024/12/1-20241205.txt
-- https://freesstap.github.io/uploads/2024/12/2-20241205.txt
-- https://freesstap.github.io/uploads/2024/12/3-20241205.txt
-- https://freesstap.github.io/uploads/2024/12/4-20241205.txt
+- https://freesstap.github.io/uploads/2024/12/0-20241207.txt
+- https://freesstap.github.io/uploads/2024/12/1-20241207.txt
+- https://freesstap.github.io/uploads/2024/12/2-20241207.txt
+- https://freesstap.github.io/uploads/2024/12/3-20241207.txt
+- https://freesstap.github.io/uploads/2024/12/4-20241207.txt
 
 ## 更多clash节点订阅 ：
 

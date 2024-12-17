@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freesstap.github.io/news/article-26876.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <title>python中repr()函数用法详解</title>
+        <meta name="description" content="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在 Python 中要将某一类型的变量或者常量转换为字符串对象通常有两种方法，即str()&nbsp;或" />
+        <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
+    <link rel="stylesheet" href="/assets/website/css/freesstap/templatemo-softy-pinko.css">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74P0V8MYK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-74P0V8MYK1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                                                    <span>Free SSTap</span>
+                                                </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h2>python中repr()函数用法详解</h2>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在 Python 中要将某一类型的变量或者常量转换为字符串对象通常有两种方法，即<code>str()</code>&nbsp;或者&nbsp;<code>repr()</code>&nbsp;。</p> <p>str()和repr()区别：</p> <ul> <li>函数str( )将其转化成为适于人阅读的前端样式文本</li> <li>函数repr(object)将对象转化为供解释器读取的形式。返回一个对象的 string 格式。</li> </ul> <p><strong>示例代码1：</strong></p> <pre><code class="language-python">s = 'python' a = str(s) b = repr(s)  print(a) print(b) print(type(a)) print(type(b)) print(eval(b))  print("-" * 100)  print(a == b)</code></pre> <p>运行结果：</p> <p><img fetchpriority="high" decoding="async" alt="" height="262" src="http://img.555519.xyz/uploads/20230210/0fdf9a1c8a7d0d6bde2f6e76d8c4fd27.jpg"></p> <p><span style="color:#fe2c24;">注意：</span>对于字符串类型，repr转换后外层会多一对引号，这一特性有时候在eval操作时有用。&nbsp;</p> <p><strong>示例代码2：</strong></p> <pre><code class="language-python">n = 123456  a = str(n) b = repr(n) print(a) print(b) print(type(a)) print(type(b))  print('-' * 100) print(len(a)) print(len(b)) </code></pre> <p>运行结果：</p> <p><img decoding="async" alt="" height="265" src="http://img.555519.xyz/uploads/20230210/94e7cec49c320feeeb947ad9ea266bf7.jpg"></p> <p>示例代码3：<strong><span style="color:#fe2c24;">【命令行下print和直接输出的对比】</span></strong></p> <pre><code class="language-python">class A(object):     def __repr__(self):         return 'repr'      def __str__(self):         return 'str'   a = A() # a    #直接输出调用的是repr方法 print(a)  # print调用的是str方法 </code></pre> <p>运行结果：</p> <p><img decoding="async" alt="" height="129" src="http://img.555519.xyz/uploads/20230210/d9acfd5b4e2091b0ce4a11c6344f73f1.jpg"></p> <p><img loading="lazy" decoding="async" alt="" height="350" src="http://img.555519.xyz/uploads/20230210/304a98e8facb2fd4fa510172f9a57ac2.jpg"></p> <p><span style="color:#fe2c24;">&nbsp;注意：</span>命令行下直接输出对象调用的是对象的repr方法，而print输出调用的是str方法</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-26406.htm">义乌免费领养狗狗地址（义乌免费领养狗狗地址在哪里）</a></p>
+                                        <p>下一个：<a href="/news/article-26877.htm">猫打疫苗一针要多少钱（猫打疫苗一针要多少钱左右）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-18625.htm" title="天津宠物博览会官网 天津宠物博览会官网预约">天津宠物博览会官网 天津宠物博览会官网预约</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新18.2M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-15-node-share-links.htm" title="Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-node-share-links.htm" title="Free SSTap节点订阅每天更新20M/S免费节点订阅链接">Free SSTap节点订阅每天更新20M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-5-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新18.5M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26405.htm" title="南京宠物狗领养地址在哪里查询（南京哪里可以领养宠物狗）">南京宠物狗领养地址在哪里查询（南京哪里可以领养宠物狗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-node-share-links.htm" title="Free SSTap节点订阅每天更新21.6M/S免费节点订阅链接">Free SSTap节点订阅每天更新21.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新19M/S免费节点订阅链接">Free SSTap节点订阅每天更新19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-node-share.htm" title="Free SSTap节点订阅每天更新22.9M/S免费节点订阅链接">Free SSTap节点订阅每天更新22.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26406.htm" title="义乌免费领养狗狗地址（义乌免费领养狗狗地址在哪里）">义乌免费领养狗狗地址（义乌免费领养狗狗地址在哪里）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+        <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">
+                        <a href="/">Free SSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="/assets/website/js/frontend/freesstap/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/freesstap/popper.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/bootstrap.min.js"></script>
+    <!-- Plugins -->
+    <script src="/assets/website/js/frontend/freesstap/scrollreveal.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/imgfix.min.js"></script>
+    <!-- Global Init -->
+    <script src="/assets/website/js/frontend/freesstap/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

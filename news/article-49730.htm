@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freesstap.github.io/news/article-49730.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <title>HCNP Routing&amp;Switching之MUX VLAN</title>
+        <meta name="description" content="　　前文我们了解了代理ARP相关话题，回顾请参考https://www.cnblogs.com/qiuhom-1874/p/16188230.html；今天我们再来聊一聊vlan隔离相关话题MUX V" />
+        <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free SSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freesstap.github.io/news/article-49730.htm" />
+    <meta property="og:site_name" content="Free SSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="HCNP Routing&amp;Switching之MUX VLAN" />
+    <meta property="og:image" content="https://freesstap.github.io/uploads/20241110/59d395e3eea9cf850e33e8880885ef84.webp" />
+        <meta property="og:release_date" content="2025-02-02T09:25:25" />
+    <meta property="og:updated_time" content="2025-02-02T09:25:25" />
+        <meta property="og:description" content="　　前文我们了解了代理ARP相关话题，回顾请参考https://www.cnblogs.com/qiuhom-1874/p/16188230.html；今天我们再来聊一聊vlan隔离相关话题MUX V" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="HCNP Routing&amp;Switching之MUX VLAN">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
+    <link rel="stylesheet" href="/assets/website/css/freesstap/templatemo-softy-pinko.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74P0V8MYK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-74P0V8MYK1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                                                    <span>Free SSTap</span>
+                                                </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h2>HCNP Routing&amp;Switching之MUX VLAN</h2>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>　　前文我们了解了代理ARP相关话题，回顾请参考<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/qiuhom-1874/p/16188230.html"  target="_blank" rel="nofollow">https://www.cnblogs.com/qiuhom-1874/p/16188230.html</a>；今天我们再来聊一聊vlan隔离相关话题MUX VLAN；</p> <p>　　vlan隔离-端口隔离回顾</p> <p>　　在同一网段的同一vlan内，为了使各端口互不干扰影响，我们可以使用端口隔离技术，配置交换机某些端口双向隔离或者单向隔离；这是从二层的角度去隔离；但是我们可以使用三层接口，开启代理arp绕过二层端口隔离，于是为了防止代理arp绕过二层端口隔离，我们也可以修改端口隔离模式为all，即二层和三层都隔离；</p> <p>　　MUX VLAN</p> <p>　　今天聊的MUX VLAN 也是一种vlan隔离技术，相对于同VLAN内的端口隔离，它更灵活；它能实现部分VLAN间可以互通、部分VLAN间隔离，同时也可以实现VLAN内端口隔离；它也是通过vlan进行网络资源控制的一种机制，只适用于二层网络中，对同一网段的用户进行隔离（注意，是同一网段）和互通；简单说MUX VLAN实现了处于相同网段的设备划入不同VLAN后，虽然二层通信是隔离的，但可以和指定vlan通信，还可以实现禁止相同VLAN内地不同设备间的通信；</p> <p>　　示例：如下拓扑</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/e78bca9eea5b8f301b624fe6b9acdc52.jpg" alt="HCNP Routing&amp;Switching之MUX VLAN"></p> <p>　　如图所示，服务器与汇聚层交换机相连，为了实现所有用户可以访问企业服务器，我们可以通过配置vlan间通信实现；对于企业来说，希望企业内部员工之间可以互相访问，第三方企业访客之间是隔离的，我们可以通过配置每个访客使用不同的vlan来实现，这样一来如果有大量的第三方访客，此时不但要消耗大量VLAN ID，还增加了管理员维护网络的难度，那怎么来解决这样的需求呢？使用MUX VLAN来解决；MUX VLAN提供二层流量隔离的机制可以实现企业内部员工之间互相通信，而第三方外来访客之间是相互隔离；</p> <p>　　MUX VLAN通信规则</p> <p>　　MUX VLAN主要有2种类型的VLAN，主VLAN和子VLAN；而子VLAN由分两种类型，一种是互通型子VLAN，一种是隔离型子VLAN，通信规则如下；</p> <p>　　1、主VLAN（Principal VLAN）：可以与MUX VLAN内所有VLAN通信，即不管是那种类型的子VLAN，主VLAN都可以和它通信；</p> <p>　　2、隔离型子VLAN（Separate VLAN）:该类型子VLAN只能和主VLAN通信，和其他类型的VLAN完全隔离，同时子VLAN内部也完全隔离；即只能和主VLAN通信，不能和其他VLAN通信，包括同一VLAN内地其他成员；</p> <p>　　3、互通型子VLAN（Group VLAN）：可以和主VLAN 通信，在同一子VLAN内部用户可以相互通信；但不能与其他互通型子 VLAN 或隔离型子VLAN内的用户通信；即互通型子VLAN 只能和主VLAN和本VLAN内用户通信，其他VLAN都不行；</p> <p>　　通过了解MUX VLAN通信规则，上述示例实现起来就非常简单，我们可以把服务器所在VLAN设置成主VLAN，把企业内部员工所在VLAN设置成互通型VLAN，把第三方访客所在VLAN设置成隔离型子VLAN；如下图所示</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/7f8967cc1e872fe92548e8e094dda550.jpg" alt="HCNP Routing&amp;Switching之MUX VLAN"></p> <p>　　实验：如下拓扑，配置MUX VLAN</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/2987f6418f6468bbb232b75f1815103c.jpg" alt="HCNP Routing&amp;Switching之MUX VLAN"></p> <p>　　交换机划分VLAN</p> <div class="cnblogs_code"><img decoding="async" src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="HCNP Routing&amp;Switching之MUX VLAN" id="code_img_closed_79819365-1492-4f17-b20b-1458ca5bb20d" class="code_img_closed"/><img decoding="async" src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="HCNP Routing&amp;Switching之MUX VLAN" id="code_img_opened_79819365-1492-4f17-b20b-1458ca5bb20d" class="code_img_opened" style="display: none"/></p> <div id="cnblogs_code_open_79819365-1492-4f17-b20b-1458ca5bb20d" class="cnblogs_code_hide"> <pre><span style="color: rgba(0, 0, 0, 1)">sys sys sw1 vlan batch</span><span style="color: rgba(128, 0, 128, 1)">12</span><span style="color: rgba(128, 0, 128, 1)">15</span><span style="color: rgba(128, 0, 128, 1)">34</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)"> port link</span>-<span style="color: rgba(0, 0, 0, 1)">type access port default vlan</span><span style="color: rgba(128, 0, 128, 1)">12</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">2</span><span style="color: rgba(0, 0, 0, 1)"> port link</span>-<span style="color: rgba(0, 0, 0, 1)">type access port default vlan</span><span style="color: rgba(128, 0, 128, 1)">12</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">3</span><span style="color: rgba(0, 0, 0, 1)"> port link</span>-<span style="color: rgba(0, 0, 0, 1)">type access port default vlan</span><span style="color: rgba(128, 0, 128, 1)">34</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">4</span><span style="color: rgba(0, 0, 0, 1)"> port link</span>-<span style="color: rgba(0, 0, 0, 1)">type access port default vlan</span><span style="color: rgba(128, 0, 128, 1)">34</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">5</span><span style="color: rgba(0, 0, 0, 1)"> port link</span>-<span style="color: rgba(0, 0, 0, 1)">type access port default vlan</span><span style="color: rgba(128, 0, 128, 1)">15</span></pre> </div> <p><span class="cnblogs_code_collapse">View Code</span></div> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/6ac85e918409c26c48e220e0c9043be4.jpg" alt="HCNP Routing&amp;Switching之MUX VLAN"></p> <p>　　验证：各vlan成员互通型</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/0904d9185062dfd15905a70f271fc6c3.jpg" alt="HCNP Routing&amp;Switching之MUX VLAN"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/29c010c5e45e9240aa751f6a02f588a4.jpg" alt="HCNP Routing&amp;Switching之MUX VLAN"></p> <p>　　提示：可以看到pc1只能和本vlan里的pc2通信，和其他pc和服务器是能通信的；同样pc3也只能和同VLAN内的PC4通信和其他VLAN 、服务器不能通信；</p> <p>　　配置MUX VLAN，实现VLAN 12能和VLAN 15通信，能在本VLAN 内互通;VLAN 34能和VLAN 15通信，本VLAN内成员相互隔离；</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/b2128bcae70a22cbdc6630daed375eb9.jpg" alt="HCNP Routing&amp;Switching之MUX VLAN"></p> <p>　　提示：我们配置MUX VLAN 只需要在主VLAN里配置即可，首先配置主VLAN为mux-vlan，然后再配置子VLAN即可；</p> <p>　　验证MUX VLAN</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/aa2cc18fcc828c20821e8ba26835f573.jpg" alt="HCNP Routing&amp;Switching之MUX VLAN"></p> <p>　　提示：通过上面的信息，我们可以看到vlan 15是主VLAN，vlan34是隔离型子VLAN，vlan12是互通型子VLAN；</p> <p>　　在相关接口开启mux-vlan 功能</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/7148f2b9e6070d3c8dd38d1863442599.jpg" alt="HCNP Routing&amp;Switching之MUX VLAN"></p> <p>　　提示：我们需要在相关VLAN接口上开启mux-vlan功能即可；</p> <p>　　验证：各vlan成员间互通型</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/23d331e4c0019f3d1993f961b2ec3cc0.jpg" alt="HCNP Routing&amp;Switching之MUX VLAN"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/a6c582eba93d57a8a90abb5e08a2c052.jpg" alt="HCNP Routing&amp;Switching之MUX VLAN"></p> <p>　　提示：可以看到我们配置上mux-vlan以后，vlan12里的成员可以和本VLAN内地成员互通，同时也能和主VLAN vlan15里的成员互通；不可用和其他vlan成员通信；vlan34只能和主VLAN vlan15里的成员互通，和本vlan内的成员相互隔离，同样也不能和其他vlan成员互通；</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-49206.htm">猫三联狂犬（猫三联+狂犬）</a></p>
+                                        <p>下一个：<a href="/news/article-49731.htm">做宠物繁殖赚钱吗养猫好吗（养宠物繁殖卖钱）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-39281.htm" title="有没有同城领养宠物的小程序 有没有同城领养宠物的小程序啊">有没有同城领养宠物的小程序 有没有同城领养宠物的小程序啊</a></li>
+                        <li class="py-2"><a href="/news/article-33949.htm" title="动物疫苗价格表最新图片高清大图 动物疫苗价格表最新图片高清大图下载">动物疫苗价格表最新图片高清大图 动物疫苗价格表最新图片高清大图下载</a></li>
+                        <li class="py-2"><a href="/news/article-40770.htm" title="猫三联多少天之内要打第二针（猫三联多少天之内要打第二针疫苗）">猫三联多少天之内要打第二针（猫三联多少天之内要打第二针疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-24092.htm" title="动物疫苗法规最新文件（动物疫苗管理制度）">动物疫苗法规最新文件（动物疫苗管理制度）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新19.5M/S免费节点订阅链接">Free SSTap节点订阅每天更新19.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-18626.htm" title="动物疫苗上市公司有哪些品牌生产（动物疫苗的上市公司有哪些）">动物疫苗上市公司有哪些品牌生产（动物疫苗的上市公司有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-37313.htm" title="利用JavaScript实现秒表功能">利用JavaScript实现秒表功能</a></li>
+                        <li class="py-2"><a href="/news/article-31570.htm" title="Tensorflow中张量（Tensor）打印信息中shape字段的理解方式">Tensorflow中张量（Tensor）打印信息中shape字段的理解方式</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新19.6M/S免费节点订阅链接">Free SSTap节点订阅每天更新19.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-36314.htm" title="关于Postman调试@RequestBody入参模式接口的用例说明">关于Postman调试@RequestBody入参模式接口的用例说明</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+        <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">Free SSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="/assets/website/js/frontend/freesstap/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/freesstap/popper.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/bootstrap.min.js"></script>
+    <!-- Plugins -->
+    <script src="/assets/website/js/frontend/freesstap/scrollreveal.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/imgfix.min.js"></script>
+    <!-- Global Init -->
+    <script src="/assets/website/js/frontend/freesstap/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

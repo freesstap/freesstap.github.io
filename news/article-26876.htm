@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://freesstap.github.io/news/article-26876.htm" />
@@ -9,6 +9,33 @@
     <title>python中repr()函数用法详解</title>
         <meta name="description" content="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在 Python 中要将某一类型的变量或者常量转换为字符串对象通常有两种方法，即str()&nbsp;或" />
         <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free SSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freesstap.github.io/news/article-26876.htm" />
+    <meta property="og:site_name" content="Free SSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="python中repr()函数用法详解" />
+    <meta property="og:image" content="https://freesstap.github.io/uploads/20241110/a6eead5fc2c28e6df818a671ccd76c91.webp" />
+        <meta property="og:release_date" content="2024-12-17T10:13:12" />
+    <meta property="og:updated_time" content="2024-12-17T10:13:12" />
+        <meta property="og:description" content="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在 Python 中要将某一类型的变量或者常量转换为字符串对象通常有两种方法，即str()&nbsp;或" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="python中repr()函数用法详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
@@ -93,7 +120,7 @@
                   				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在 Python 中要将某一类型的变量或者常量转换为字符串对象通常有两种方法，即<code>str()</code>&nbsp;或者&nbsp;<code>repr()</code>&nbsp;。</p> <p>str()和repr()区别：</p> <ul> <li>函数str( )将其转化成为适于人阅读的前端样式文本</li> <li>函数repr(object)将对象转化为供解释器读取的形式。返回一个对象的 string 格式。</li> </ul> <p><strong>示例代码1：</strong></p> <pre><code class="language-python">s = 'python' a = str(s) b = repr(s)  print(a) print(b) print(type(a)) print(type(b)) print(eval(b))  print("-" * 100)  print(a == b)</code></pre> <p>运行结果：</p> <p><img fetchpriority="high" decoding="async" alt="" height="262" src="http://img.555519.xyz/uploads/20230210/0fdf9a1c8a7d0d6bde2f6e76d8c4fd27.jpg"></p> <p><span style="color:#fe2c24;">注意：</span>对于字符串类型，repr转换后外层会多一对引号，这一特性有时候在eval操作时有用。&nbsp;</p> <p><strong>示例代码2：</strong></p> <pre><code class="language-python">n = 123456  a = str(n) b = repr(n) print(a) print(b) print(type(a)) print(type(b))  print('-' * 100) print(len(a)) print(len(b)) </code></pre> <p>运行结果：</p> <p><img decoding="async" alt="" height="265" src="http://img.555519.xyz/uploads/20230210/94e7cec49c320feeeb947ad9ea266bf7.jpg"></p> <p>示例代码3：<strong><span style="color:#fe2c24;">【命令行下print和直接输出的对比】</span></strong></p> <pre><code class="language-python">class A(object):     def __repr__(self):         return 'repr'      def __str__(self):         return 'str'   a = A() # a    #直接输出调用的是repr方法 print(a)  # print调用的是str方法 </code></pre> <p>运行结果：</p> <p><img decoding="async" alt="" height="129" src="http://img.555519.xyz/uploads/20230210/d9acfd5b4e2091b0ce4a11c6344f73f1.jpg"></p> <p><img loading="lazy" decoding="async" alt="" height="350" src="http://img.555519.xyz/uploads/20230210/304a98e8facb2fd4fa510172f9a57ac2.jpg"></p> <p><span style="color:#fe2c24;">&nbsp;注意：</span>命令行下直接输出对象调用的是对象的repr方法，而print输出调用的是str方法</p> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-26406.htm">义乌免费领养狗狗地址（义乌免费领养狗狗地址在哪里）</a></p>
-                                        <p>下一个：<a href="/news/article-26877.htm">猫打疫苗一针要多少钱（猫打疫苗一针要多少钱左右）</a></p>
+                                        <p>下一个：<a href="/news/article-28270.htm">狗粮进货渠道哪里便宜（狗粮进货渠道哪里便宜点）</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -103,16 +130,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-14-node-share-links.htm" title="Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-21335.htm" title="开个宠物美容店需要什么（开个宠物美容店需要什么资质）">开个宠物美容店需要什么（开个宠物美容店需要什么资质）</a></li>
-                        <li class="py-2"><a href="/news/article-20875.htm" title="三国杀哪些动态皮肤值得合（三国杀动态皮肤值多少钱）">三国杀哪些动态皮肤值得合（三国杀动态皮肤值多少钱）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-6-free-node-subscribe.htm" title="Free SSTap节点订阅每天更新20.8M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.8M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-23166.htm" title="GAIA-IR: GraphScope 上的并行化图查询引擎">GAIA-IR: GraphScope 上的并行化图查询引擎</a></li>
-                        <li class="py-2"><a href="/news/article-26405.htm" title="南京宠物狗领养地址在哪里查询（南京哪里可以领养宠物狗）">南京宠物狗领养地址在哪里查询（南京哪里可以领养宠物狗）</a></li>
+                        <li class="py-2"><a href="/news/article-30622.htm" title="动物疫苗批号查询网站官网 动物疫苗批号查询网站官网入口">动物疫苗批号查询网站官网 动物疫苗批号查询网站官网入口</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-free-node-subscribe.htm" title="Free SSTap节点订阅每天更新18.1M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-42253.htm" title="动物疫苗证 动物疫苗证明">动物疫苗证 动物疫苗证明</a></li>
+                        <li class="py-2"><a href="/news/article-21334.htm" title="Spring全家桶-Spring Security之自定义表单，认证，鉴权">Spring全家桶-Spring Security之自定义表单，认证，鉴权</a></li>
+                        <li class="py-2"><a href="/news/article-30621.htm" title="动物打疫苗打几次最好（动物打防疫针多少钱）">动物打疫苗打几次最好（动物打防疫针多少钱）</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-11-13-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新18.2M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.2M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-24-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新21M/S免费节点订阅链接">Free SSTap节点订阅每天更新21M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-22250.htm" title="小猫要跟主人睡一个房间吗（小猫咪一定要和主人在一个房间）">小猫要跟主人睡一个房间吗（小猫咪一定要和主人在一个房间）</a></li>
-                        <li class="py-2"><a href="/news/article-19958.htm" title="weak_ptr介绍">weak_ptr介绍</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新21.7M/S免费节点订阅链接">Free SSTap节点订阅每天更新21.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-40270.htm" title="瑞派宠物医院多少家门店（瑞派宠物医院企查查）">瑞派宠物医院多少家门店（瑞派宠物医院企查查）</a></li>
+                        <li class="py-2"><a href="/news/article-24091.htm" title="北京宠物店兼职（北京宠物医院兼职）">北京宠物店兼职（北京宠物医院兼职）</a></li>
+                        <li class="py-2"><a href="/news/article-38293.htm" title="pycharm连接sqlite">pycharm连接sqlite</a></li>
                     </ul>
     </div>
 </div>
@@ -124,7 +151,13 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>

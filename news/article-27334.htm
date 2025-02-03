@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://freesstap.github.io/news/article-27334.htm" />
@@ -9,6 +9,33 @@
     <title>ubuntu18.04 使用vscode #include＜iostream＞产生蓝色波浪线，未检测路径</title>
         <meta name="description" content="ubuntu18.04 使用vscode #include产生蓝色波浪线，未检测路径 解决办法： 执行命令查看g++包含路径 g++-v-E-x c++- 复制终端中显示的路径内容 在vscode中摁" />
         <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free SSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freesstap.github.io/news/article-27334.htm" />
+    <meta property="og:site_name" content="Free SSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="ubuntu18.04 使用vscode #include＜iostream＞产生蓝色波浪线，未检测路径" />
+    <meta property="og:image" content="https://freesstap.github.io/uploads/20241110/1879d0c665c6126e2871e3e6dc745378.webp" />
+        <meta property="og:release_date" content="2024-12-18T09:52:31" />
+    <meta property="og:updated_time" content="2024-12-18T09:52:31" />
+        <meta property="og:description" content="ubuntu18.04 使用vscode #include产生蓝色波浪线，未检测路径 解决办法： 执行命令查看g++包含路径 g++-v-E-x c++- 复制终端中显示的路径内容 在vscode中摁" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ubuntu18.04 使用vscode #include＜iostream＞产生蓝色波浪线，未检测路径">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
@@ -93,7 +120,7 @@
                   				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p><strong>ubuntu18.04 使用vscode #include产生蓝色波浪线，未检测路径</strong><br /> 解决办法：<br /> 执行命令查看g++包含路径</p> <pre><code class="prism language-cpp">g<span class="token operator">++</span><span class="token operator">-</span>v<span class="token operator">-</span>E<span class="token operator">-</span>x c<span class="token operator">++</span><span class="token operator">-</span></code></pre> <p>复制终端中显示的路径内容<br /> 在vscode中摁ctrl+shift+p搜索json文件<br /> 原始json文件如下</p> <pre><code class="prism language-cpp"><span class="token punctuation">{<!-- --></span><span class="token string">"configurations"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{<!-- --></span><span class="token string">"name"</span><span class="token operator">:</span><span class="token string">"Linux"</span><span class="token punctuation">,</span><span class="token string">"includePath"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"${workspaceFolder}/**"</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">"defines"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">"compilerPath"</span><span class="token operator">:</span><span class="token string">"/opt/hisi-linux/x86-arm/gcc-arm-none-eabi-4_9-2015q3/bin/arm-none-eabi-gcc"</span><span class="token punctuation">,</span><span class="token string">"cStandard"</span><span class="token operator">:</span><span class="token string">"c89"</span><span class="token punctuation">,</span><span class="token string">"cppStandard"</span><span class="token operator">:</span><span class="token string">"gnu++98"</span><span class="token punctuation">,</span><span class="token string">"intelliSenseMode"</span><span class="token operator">:</span><span class="token string">"linux-gcc-arm"</span><span class="token punctuation">,</span><span class="token string">"configurationProvider"</span><span class="token operator">:</span><span class="token string">"ms-vscode.cmake-tools"</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">"version"</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">}</span></code></pre> <p>在includepath后加入复制的路径，即</p> <pre><code class="prism language-cpp"><span class="token punctuation">{<!-- --></span><span class="token string">"configurations"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{<!-- --></span><span class="token string">"name"</span><span class="token operator">:</span><span class="token string">"Linux"</span><span class="token punctuation">,</span><span class="token string">"includePath"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"${workspaceFolder}/**"</span><span class="token punctuation">,</span><span class="token string">"/usr/include/c++/7"</span><span class="token punctuation">,</span><span class="token string">"/usr/include/x86_64-linux-gnu/c++/7"</span><span class="token punctuation">,</span><span class="token string">"/usr/include/c++/7/backward"</span><span class="token punctuation">,</span><span class="token string">"/usr/lib/gcc/x86_64-linux-gnu/7/include"</span><span class="token punctuation">,</span><span class="token string">"/usr/local/include"</span><span class="token punctuation">,</span><span class="token string">"/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"</span><span class="token punctuation">,</span><span class="token string">"/usr/include/x86_64-linux-gnu"</span><span class="token punctuation">,</span><span class="token string">"/usr/include"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">"defines"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">"compilerPath"</span><span class="token operator">:</span><span class="token string">"/opt/hisi-linux/x86-arm/gcc-arm-none-eabi-4_9-2015q3/bin/arm-none-eabi-gcc"</span><span class="token punctuation">,</span><span class="token string">"cStandard"</span><span class="token operator">:</span><span class="token string">"c89"</span><span class="token punctuation">,</span><span class="token string">"cppStandard"</span><span class="token operator">:</span><span class="token string">"gnu++98"</span><span class="token punctuation">,</span><span class="token string">"intelliSenseMode"</span><span class="token operator">:</span><span class="token string">"linux-gcc-arm"</span><span class="token punctuation">,</span><span class="token string">"configurationProvider"</span><span class="token operator">:</span><span class="token string">"ms-vscode.cmake-tools"</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">"version"</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">}</span></code></pre> <p><strong>注意：完成后关闭vscode重新打开项目生效。</strong></p> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-26877.htm">猫打疫苗一针要多少钱（猫打疫苗一针要多少钱左右）</a></p>
-                                        <p>下一个：<a href="/news/article-27335.htm">动物医院属于什么行业类别的 动物医院属于什么行业类别的企业</a></p>
+                                        <p>下一个：<a href="/news/article-28270.htm">狗粮进货渠道哪里便宜（狗粮进货渠道哪里便宜点）</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -103,16 +130,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-21335.htm" title="开个宠物美容店需要什么（开个宠物美容店需要什么资质）">开个宠物美容店需要什么（开个宠物美容店需要什么资质）</a></li>
-                        <li class="py-2"><a href="/news/article-26405.htm" title="南京宠物狗领养地址在哪里查询（南京哪里可以领养宠物狗）">南京宠物狗领养地址在哪里查询（南京哪里可以领养宠物狗）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-11-free-node-subscribe.htm" title="Free SSTap节点订阅每天更新23M/S免费节点订阅链接">Free SSTap节点订阅每天更新23M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新18.2M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.2M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-14-node-share-links.htm" title="Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-26876.htm" title="python中repr()函数用法详解">python中repr()函数用法详解</a></li>
-                        <li class="py-2"><a href="/news/article-19959.htm" title="宠物食品一件代发（宠物用品代发货）">宠物食品一件代发（宠物用品代发货）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-19-node-share-links.htm" title="Free SSTap节点订阅每天更新18.8M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.8M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-27-node-share-links.htm" title="Free SSTap节点订阅每天更新20M/S免费节点订阅链接">Free SSTap节点订阅每天更新20M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-28269.htm" title="Redis4-缓存过期和删除策略">Redis4-缓存过期和删除策略</a></li>
+                        <li class="py-2"><a href="/news/article-46224.htm" title="vue3-setup中使用mapState">vue3-setup中使用mapState</a></li>
+                        <li class="py-2"><a href="/news/article-38788.htm" title="领养宠物正规平台推荐（领养宠物网）">领养宠物正规平台推荐（领养宠物网）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新19M/S免费节点订阅链接">Free SSTap节点订阅每天更新19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新20.8M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-29197.htm" title="动物疫苗的种类和制备原理是什么意思（动物疫苗的种类和制备原理是什么意思啊）">动物疫苗的种类和制备原理是什么意思（动物疫苗的种类和制备原理是什么意思啊）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新21.2M/S免费节点订阅链接">Free SSTap节点订阅每天更新21.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-node-share-links.htm" title="Free SSTap节点订阅每天更新18.8M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新22.2M/S免费节点订阅链接">Free SSTap节点订阅每天更新22.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-21791.htm" title="动物医院前台个人总结怎么写（动物医院前台个人总结怎么写范文）">动物医院前台个人总结怎么写（动物医院前台个人总结怎么写范文）</a></li>
+                        <li class="py-2"><a href="/news/article-43253.htm" title="动物疫苗的重要性有哪些内容（动物疫苗的重要性有哪些内容呢）">动物疫苗的重要性有哪些内容（动物疫苗的重要性有哪些内容呢）</a></li>
                     </ul>
     </div>
 </div>
@@ -124,7 +151,13 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>

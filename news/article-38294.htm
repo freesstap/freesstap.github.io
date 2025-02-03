@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://freesstap.github.io/news/article-38294.htm" />
@@ -9,6 +9,33 @@
     <title>一个 Java8 的线程池 BUG 引发线上偶发 Bug 重现分析</title>
         <meta name="description" content="你知道的越多，不知道的就越多，业余的像一棵小草！ 你来，我们一起精进！你不来，我和你的竞争对手一起精进！ 编辑：业余草 segmentfault.com/a/1190000021109130 推荐：h" />
         <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free SSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freesstap.github.io/news/article-38294.htm" />
+    <meta property="og:site_name" content="Free SSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="一个 Java8 的线程池 BUG 引发线上偶发 Bug 重现分析" />
+    <meta property="og:image" content="https://freesstap.github.io/uploads/20241110/ce2d070edbc01c851a4d7e6ee773bb6e.webp" />
+        <meta property="og:release_date" content="2025-01-10T10:41:28" />
+    <meta property="og:updated_time" content="2025-01-10T10:41:28" />
+        <meta property="og:description" content="你知道的越多，不知道的就越多，业余的像一棵小草！ 你来，我们一起精进！你不来，我和你的竞争对手一起精进！ 编辑：业余草 segmentfault.com/a/1190000021109130 推荐：h" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="一个 Java8 的线程池 BUG 引发线上偶发 Bug 重现分析">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
@@ -103,16 +130,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-27335.htm" title="动物医院属于什么行业类别的 动物医院属于什么行业类别的企业">动物医院属于什么行业类别的 动物医院属于什么行业类别的企业</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-28-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新19M/S免费节点订阅链接">Free SSTap节点订阅每天更新19M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-25946.htm" title="动物诊疗许可证是什么事项类别（动物诊疗许可证是什么事项类别的）">动物诊疗许可证是什么事项类别（动物诊疗许可证是什么事项类别的）</a></li>
-                        <li class="py-2"><a href="/news/article-18625.htm" title="天津宠物博览会官网 天津宠物博览会官网预约">天津宠物博览会官网 天津宠物博览会官网预约</a></li>
+                        <li class="py-2"><a href="/news/article-48183.htm" title="延吉宠物店电话号码多少号（延吉宠物医院24小时营业）">延吉宠物店电话号码多少号（延吉宠物医院24小时营业）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新18.8M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19959.htm" title="宠物食品一件代发（宠物用品代发货）">宠物食品一件代发（宠物用品代发货）</a></li>
+                        <li class="py-2"><a href="/news/article-43252.htm" title="公务员国考考试报名时间（公务员国考考试报名时间）">公务员国考考试报名时间（公务员国考考试报名时间）</a></li>
+                        <li class="py-2"><a href="/news/article-46714.htm" title="猫不打疫苗不可以洗澡吗为什么（猫不打疫苗可以吗?）">猫不打疫苗不可以洗澡吗为什么（猫不打疫苗可以吗?）</a></li>
+                        <li class="py-2"><a href="/news/article-39281.htm" title="有没有同城领养宠物的小程序 有没有同城领养宠物的小程序啊">有没有同城领养宠物的小程序 有没有同城领养宠物的小程序啊</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新20.1M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23166.htm" title="GAIA-IR: GraphScope 上的并行化图查询引擎">GAIA-IR: GraphScope 上的并行化图查询引擎</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-1-7-node-share.htm" title="Free SSTap节点订阅每天更新22.3M/S免费节点订阅链接">Free SSTap节点订阅每天更新22.3M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-12-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新22.4M/S免费节点订阅链接">Free SSTap节点订阅每天更新22.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-16-node-share.htm" title="Free SSTap节点订阅每天更新19M/S免费节点订阅链接">Free SSTap节点订阅每天更新19M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-10-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新22.3M/S免费节点订阅链接">Free SSTap节点订阅每天更新22.3M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-20417.htm" title="SpringBoot 自定义ThreadPoolTaskScheduler线程池执行定时任务">SpringBoot 自定义ThreadPoolTaskScheduler线程池执行定时任务</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-15-node-share-links.htm" title="Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-23-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新18.9M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.9M/S免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -124,7 +151,10 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>

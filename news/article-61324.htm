@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freesstap.github.io/news/article-61324.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <title>Django项目使用pyinstall打包步骤（包含各种出错处理方法）</title>
+        <meta name="description" content="由于需要虚拟环境中各种依赖的库，在其他电脑开启本地服务，所以将Django项目进行打包，以下是各种步骤以及出错的处理  安装pyinstall 我在使用pip安装pyinstall的时候，会出现大量的" />
+        <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free SSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freesstap.github.io/news/article-61324.htm" />
+    <meta property="og:site_name" content="Free SSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="Django项目使用pyinstall打包步骤（包含各种出错处理方法）" />
+    <meta property="og:image" content="https://freesstap.github.io/uploads/20241110/3b11e3314555600c1c79f8624d4ef06e.webp" />
+        <meta property="og:release_date" content="2025-02-23T09:44:26" />
+    <meta property="og:updated_time" content="2025-02-23T09:44:26" />
+        <meta property="og:description" content="由于需要虚拟环境中各种依赖的库，在其他电脑开启本地服务，所以将Django项目进行打包，以下是各种步骤以及出错的处理  安装pyinstall 我在使用pip安装pyinstall的时候，会出现大量的" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Django项目使用pyinstall打包步骤（包含各种出错处理方法）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
+    <link rel="stylesheet" href="/assets/website/css/freesstap/templatemo-softy-pinko.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74P0V8MYK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-74P0V8MYK1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                                                    <span>Free SSTap</span>
+                                                </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h2>Django项目使用pyinstall打包步骤（包含各种出错处理方法）</h2>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>由于需要虚拟环境中各种依赖的库，在其他电脑开启本地服务，所以将Django项目进行打包，以下是各种步骤以及出错的处理</p> <ul> <li>安装pyinstall<br /> 我在使用pip安装pyinstall的时候，会出现大量的红字错误，只需要按照下面的指令一个个执行就好了</li> </ul> <pre><code>pip install pywin32； pip install wheel pip install -U setuptools pip install pyinstaller </code></pre> <ul> <li>开始打包</li> </ul> <p>执行下面两条指令，其中执行第一条后会生成一个spec文件，先不用管，等会会进行修改。第二条就是开始使用pyinstaller打包的指令</p> <pre><code>pyi-makespec -D manage.py pyinstaller manage.spec </code></pre> <p>在执行过程中，可能会出现Import Error，注意是可能在打包而不是执行的时候出现，网上大多都是说执行exe时会出现。而这里出现，他并没有说明缺的是哪个包，这个时候就要将控制台往上翻，就会翻到类似这个的错误</p> <pre><code>Import Error：No module named XXX </code></pre> <p>然后我显示缺失的包名是我Django项目中的其中一个App名，而我将app都放在了apps文件夹中，并在settings文件夹中设置了目录，导致pyinstall找不到。</p> <p>解决办法就是将app都移到主目录上，settings注释掉设置目录的代码即可，操作并不复杂，之后再次执行上面那两句打包指令</p> <pre><code>pyi-makespec -D manage.py pyinstaller manage.spec </code></pre> <p>这次我就正常生成了exe文件在dict目录下，执行下面指令开启服务器</p> <pre><code>manage.exe runserver </code></pre> <p>然后又是一堆Import Error，后面会跟着缺失的包名，这个就很好解决了，打开上面提到的manage.spec文件，按照下面这个图这样加入缺失的包名。具体是为什么，简单来说是因为这些是django项目中隐式加入的，所以我们需要手动加进去。<br /> 然后就是删掉build和dict文件夹并重新打包，重新开启服务器，有时候会提示缺失多个包，有时候会只提示一个，反正重复执行到不出现Import Error为止<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/f4705d06921a8cfb3fef751fc81760a7.jpg" alt="Django项目使用pyinstall打包步骤（包含各种出错处理方法）"></p> <pre><code>pyi-makespec -D manage.py pyinstaller manage.spec cd dict manage.exe runserver </code></pre> <p>我在处理完上述问题后，又出现了新的问题，主要是这两条</p> <pre><code>KeyError:'interval' LookupError: No trigger by the name "interval" was found SchedulerNotRunningError:Scheduler is not running </code></pre> <p>出现错误的地方是Django项目中有使用调度器scheduler，具体错误原因不明，但是网上有很多解决办法，其中有效的是创建一个IntervalTrigger对象代替参数</p> <pre><code>trigger = IntervalTrigger(hours=3) @register_job(scheduler,trigger)     def my_job():     	#省略 </code></pre> <p>同样适用于add_job</p> <p>上面的问题处理完后，就可以正常开启本地服务器了，但是却访问不了页面，因为模板等都没有复制过去，如果有第三方库也用到html、css、js文件等，可以直接将第三方库地文件夹复制到exe同级目录，这样就不会出错了。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-60721.htm">领养宠物店地址怎么填写才正确（当地领养宠物机构）</a></p>
+                                        <p>下一个：<a href="/news/article-61325.htm">合肥宠物领养网站（合肥宠物领养网站推荐）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-34427.htm" title="学美容学费一般多少钱要学多久知乎（学美容费用多少）">学美容学费一般多少钱要学多久知乎（学美容费用多少）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-node-share.htm" title="Free SSTap节点订阅每天更新22.9M/S免费节点订阅链接">Free SSTap节点订阅每天更新22.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-27334.htm" title="ubuntu18.04 使用vscode #include＜iostream＞产生蓝色波浪线，未检测路径">ubuntu18.04 使用vscode #include＜iostream＞产生蓝色波浪线，未检测路径</a></li>
+                        <li class="py-2"><a href="/news/article-36314.htm" title="关于Postman调试@RequestBody入参模式接口的用例说明">关于Postman调试@RequestBody入参模式接口的用例说明</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-20-node-share.htm" title="Free SSTap节点订阅每天更新18.9M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-54496.htm" title="小型宠物粮食加工设备价格表 小型宠物粮食加工设备价格表图片">小型宠物粮食加工设备价格表 小型宠物粮食加工设备价格表图片</a></li>
+                        <li class="py-2"><a href="/news/article-53953.htm" title="React + TypeScript实战（一）设定事件处理函数的参数类型">React + TypeScript实战（一）设定事件处理函数的参数类型</a></li>
+                        <li class="py-2"><a href="/news/article-26405.htm" title="南京宠物狗领养地址在哪里查询（南京哪里可以领养宠物狗）">南京宠物狗领养地址在哪里查询（南京哪里可以领养宠物狗）</a></li>
+                        <li class="py-2"><a href="/news/article-53403.htm" title="MySQL 回表">MySQL 回表</a></li>
+                        <li class="py-2"><a href="/news/article-33949.htm" title="动物疫苗价格表最新图片高清大图 动物疫苗价格表最新图片高清大图下载">动物疫苗价格表最新图片高清大图 动物疫苗价格表最新图片高清大图下载</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+        <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">Free SSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="/assets/website/js/frontend/freesstap/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/freesstap/popper.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/bootstrap.min.js"></script>
+    <!-- Plugins -->
+    <script src="/assets/website/js/frontend/freesstap/scrollreveal.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/imgfix.min.js"></script>
+    <!-- Global Init -->
+    <script src="/assets/website/js/frontend/freesstap/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

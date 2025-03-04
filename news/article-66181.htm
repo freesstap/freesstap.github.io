@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freesstap.github.io/news/article-66181.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <title>高薪程序员&amp;面试题精讲系列17之Java代码中如果有太多if语句该如何优化？</title>
+        <meta name="description" content="一. 今日题目 我们在面试时，面试官会从各个方面考察我们到底有没有参与过项目，既会考察我们对某个技能的掌握和理解情况，也会考察我们的编程习惯和技巧。比如，有这么一道面试题：  如果你的项目代码中，有大" />
+        <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free SSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freesstap.github.io/news/article-66181.htm" />
+    <meta property="og:site_name" content="Free SSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="高薪程序员&amp;面试题精讲系列17之Java代码中如果有太多if语句该如何优化？" />
+    <meta property="og:image" content="https://freesstap.github.io/uploads/20241110/7bd2e0daf9f295a25fb89523d25f4139.webp" />
+        <meta property="og:release_date" content="2025-03-03T08:13:12" />
+    <meta property="og:updated_time" content="2025-03-03T08:13:12" />
+        <meta property="og:description" content="一. 今日题目 我们在面试时，面试官会从各个方面考察我们到底有没有参与过项目，既会考察我们对某个技能的掌握和理解情况，也会考察我们的编程习惯和技巧。比如，有这么一道面试题：  如果你的项目代码中，有大" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="高薪程序员&amp;面试题精讲系列17之Java代码中如果有太多if语句该如何优化？">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
+    <link rel="stylesheet" href="/assets/website/css/freesstap/templatemo-softy-pinko.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74P0V8MYK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-74P0V8MYK1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                                                    <span>Free SSTap</span>
+                                                </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h2>高薪程序员&amp;面试题精讲系列17之Java代码中如果有太多if语句该如何优化？</h2>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2 id="NxkJ5">一. 今日题目</h2> <p id="u9250c598">我们在面试时，面试官会从各个方面考察我们到底有没有参与过项目，既会考察我们对某个技能的掌握和理解情况，也会考察我们的编程习惯和技巧。比如，有这么一道面试题：</p> <blockquote> <p id="u81f5f081"><span style="color:#fe2c24;"><strong>如果你的项目代码中，有大量的if/else语句，你有什么优化解决方案?</strong></span></p> </blockquote> <h2 id="2a6c598b">二. 题目剖析</h2> <p id="u69f71d37">我们在平时开发写的代码中，if-else判断语句基本是必不可少的。当我们只有一两层判断语句嵌套的时候其实还好，但是当我们过度地、不必要地使用 if...else语句，就会对代码的可读性、可扩展性造成负面影响。另外如果判断语句越来越多，后期进行项目维护也会比较困难，对于后面接手项目的人来说，也是一个很头疼的问题。</p> <p id="ue15db78c">所以去除代码中过多的if...else语句，就是对程序员软件重构、设计模式、面向对象设计、架构模式、数据结构等多方面技术综合运用能力的反映了。所以我们的代码中要合理使用 if...else，既不能没有，也不能过度。这些对某个技术的综合、合理地运用，都需要程我们序员在工作中不断的摸索总结。</p> <p id="u78a47d82">这也是这道面试题的考察目的！</p> <h2 id="d5909f2f">三. 存在问题</h2> <h3 id="HI5S9">1. 示例代码</h3> <p id="u84e78c47"><strong>壹哥</strong> 先给各位展示如下一段代码，请回忆一下，在你之前的项目中，有没有如下风格的代码，在一个类或方法中，有</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-65562.htm">济南宠物领养救助中心 济南宠物领养救助中心电话</a></p>
+                                        <p>下一个：<a href="/news/article-66182.htm">java如何对Map进行排序</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-22708.htm" title="小型狗粮加工设备价格表图片（小型狗粮生产设备）">小型狗粮加工设备价格表图片（小型狗粮生产设备）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-free-node-subscribe.htm" title="Free SSTap节点订阅每天更新18.5M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-43744.htm" title="猫咪3针疫苗一共多少元冬天打（猫咪三针疫苗需要多久）">猫咪3针疫苗一共多少元冬天打（猫咪三针疫苗需要多久）</a></li>
+                        <li class="py-2"><a href="/news/article-21791.htm" title="动物医院前台个人总结怎么写（动物医院前台个人总结怎么写范文）">动物医院前台个人总结怎么写（动物医院前台个人总结怎么写范文）</a></li>
+                        <li class="py-2"><a href="/news/article-59566.htm" title="测试开发该如何在团队中推广新工具和新技术">测试开发该如何在团队中推广新工具和新技术</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新19.5M/S免费节点订阅链接">Free SSTap节点订阅每天更新19.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-4-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新18.5M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-39281.htm" title="有没有同城领养宠物的小程序 有没有同城领养宠物的小程序啊">有没有同城领养宠物的小程序 有没有同城领养宠物的小程序啊</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新18.1M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新22.2M/S免费节点订阅链接">Free SSTap节点订阅每天更新22.2M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+        <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">Free SSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="/assets/website/js/frontend/freesstap/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/freesstap/popper.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/bootstrap.min.js"></script>
+    <!-- Plugins -->
+    <script src="/assets/website/js/frontend/freesstap/scrollreveal.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/imgfix.min.js"></script>
+    <!-- Global Init -->
+    <script src="/assets/website/js/frontend/freesstap/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

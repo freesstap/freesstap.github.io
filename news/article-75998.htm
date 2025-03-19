@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freesstap.github.io/news/article-75998.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <title>centos离线安装nginx详细教程</title>
+        <meta name="description" content="centos离线安装nginx详细教程 在医院或是某些环境中通常都是内网的，访问不了外网，所以很多服务都得通过离线的方式安装，下面 W3Cschool 小编给大家讲讲 CentOs 系统中如何离线安装" />
+        <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free SSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freesstap.github.io/news/article-75998.htm" />
+    <meta property="og:site_name" content="Free SSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="centos离线安装nginx详细教程" />
+    <meta property="og:image" content="https://freesstap.github.io/uploads/20241110/c1d54b572641f82754becbdf5e209db0.webp" />
+        <meta property="og:release_date" content="2025-03-18T06:11:05" />
+    <meta property="og:updated_time" content="2025-03-18T06:11:05" />
+        <meta property="og:description" content="centos离线安装nginx详细教程 在医院或是某些环境中通常都是内网的，访问不了外网，所以很多服务都得通过离线的方式安装，下面 W3Cschool 小编给大家讲讲 CentOs 系统中如何离线安装" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="centos离线安装nginx详细教程">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
+    <link rel="stylesheet" href="/assets/website/css/freesstap/templatemo-softy-pinko.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74P0V8MYK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-74P0V8MYK1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                                                    <span>Free SSTap</span>
+                                                </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h2>centos离线安装nginx详细教程</h2>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2><a id="centosnginx_0" rel="nofollow"></a>centos离线安装nginx详细教程</h2> <p>在医院或是某些环境中通常都是内网的，访问不了外网，所以很多服务都得通过离线的方式安装，下面 W3Cschool 小编给大家讲讲 CentOs 系统中如何离线安装Nginx 。</p> <p><strong>安装准备</strong><br /> Nginx 离线安装依赖gcc、g++ 环境，所以安装前要先检查以下系统中是否自带 gcc 和 g++，如果没有那么就需要先进行安装。</p> <p>安装 Nginx 之前需要先安装 openssl、pcre、zlib，根据Nginx官网介绍好像对 openssl 的版本没有要求，但对于 pcre 则要求8.44版本、zlib 要求1.2.11版本、nginx 离线安装包为1.18.0。<img decoding="async" src="http://img.555519.xyz/uploads3/20220604/370ddd8eb1161e9736176fd67d756bc3.jpg" alt="centos离线安装nginx详细教程"><br /> 将下载下来的nginx_pacakge解压包导入/usr/local目录下</p> <p><strong>安装gcc</strong><br /> 查看系统中是否已安装 gcc</p> <pre><code class="prism language-css">gcc -v</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/6a0eb976b0f1c21c8cc50c52c6667361.jpg" alt="centos离线安装nginx详细教程"><br /> 如图所示，系统环境中已安装 gcc，则不需要再安装，忽略以下步骤。</p> <p>否则，执行以下步骤：</p> <p>进入/usr/local/nginx_package/gcc目录，执行以下命令安装 gcc：</p> <pre><code class="prism language-css">rpm -ivh *.rpm --nodeps --force</code></pre> <p>其中<code>--nodeps</code>表示忽略依赖检查，<code>--force</code>表示强制安装。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/c93fce328b23a84c1a5f995027a7c05d.jpg" alt="centos离线安装nginx详细教程"><br /><strong>安装g++</strong><br /> 查看系统中是否已安装 gcc</p> <pre><code class="prism language-css">g++ -v</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/d62f7201b07793ed9632dd42972df6d3.jpg" alt="centos离线安装nginx详细教程"><br /> 如图所示，系统环境中已安装 g++，则不需要再安装，忽略以下步骤。</p> <p>否则，执行以下步骤：</p> <p>进入/usr/local/nginx_package/g++目录，执行以下命令安装 g++：</p> <pre><code class="prism language-css">rpm -ivh *.rpm --nodeps --force</code></pre> <p>其中–nodeps表示忽略依赖检查，–force表示强制安装。<img decoding="async" src="http://img.555519.xyz/uploads3/20220604/24a2101d1a3948f9117452362cec99bb.jpg" alt="centos离线安装nginx详细教程"><br /><strong>安装openssl</strong><br /> 解压openssl进入/usr/local/nginx_package目录，执行以下命令解压 openssl：</p> <pre><code class="prism language-css">tar -zxvf openssl-1.0.2h.tar.gz</code></pre> <p>进入解压好的 openssl-1.0.2h目录，执行以下命令做编译前准备：</p> <pre><code class="prism language-css">./config</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/9f2ce5da9f90112a7889c1fa578ce332.jpg" alt="centos离线安装nginx详细教程"><br /> 编译并安装：</p> <pre><code class="prism language-css">make &amp;&amp; make install</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/2cda01a8b441797f2af64c5a51a62d43.jpg" alt="centos离线安装nginx详细教程"><br /><strong>安装pcre</strong><br /> 解压 pcre 进入/usr/local/nginx_package 目录，执行以下命令解压 pcre：</p> <pre><code class="prism language-css">tar -zxvf pcre-8.44.tar.gz</code></pre> <p>进入解压好的pcre-8.44目录，执行以下命令做编译前准备：</p> <pre><code class="prism language-css">./configure</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/f61e7f893f0b04768c606e559f2213ca.jpg" alt="centos离线安装nginx详细教程"><br /> 编译并安装：</p> <pre><code class="prism language-css">make &amp;&amp; make install</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/0519a6fa641220b1bc01173865fc3f12.jpg" alt="centos离线安装nginx详细教程"><br /><strong>安装zlib</strong><br /> 解压zlib进入 /usr/local/nginx_package 目录，执行以下命令解压 zlib：</p> <pre><code class="prism language-css">tar -zxvf zlib-1.2.11.tar.gz</code></pre> <p>进入解压好的 zlib-1.2.11 目录，执行以下命令做编译前准备：</p> <pre><code class="prism language-css">./configure</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/3ee0ec2f1fa7625a611c67bd84b4fc91.jpg" alt="centos离线安装nginx详细教程"><br /> 编译并安装：</p> <pre><code class="prism language-css">make &amp;&amp; make install</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/a2e30648142e3097de835e03d2abd657.jpg" alt="centos离线安装nginx详细教程"><br /><strong>安装Nginx</strong><br /> 解压 nginx 进入 /usr/local/nginx_package 目录，执行以下命令解压 nginx：</p> <pre><code class="prism language-css">tar -zxvf nginx-1.18.0.tar.gz</code></pre> <p>进入解压好的 nginx-1.18.0 目录，在 /usr/local 下创建 nginx 目录并执行以下命令做编译前准备：</p> <pre><code class="prism language-css">mkdir /usr/local/nginx  ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-pcre=../pcre-8.44 --with-zlib=../zlib-1.2.11 --with-openssl=../openssl-1.0.2h</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/f30134a413ad08a1d3b54f06bc360462.jpg" alt="centos离线安装nginx详细教程"><br /> 编译并安装：</p> <pre><code class="prism language-css">make &amp;&amp; make install</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/65d0297be0addb77cf4e47e113dfa39d.jpg" alt="centos离线安装nginx详细教程">进入 /usr/local/nginx/sbin 目录下，检验是否安装成功：</p> <pre><code class="prism language-css">./nginx -t</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/750fbdfe9d8941025fefcf8079d1dde5.jpg" alt="centos离线安装nginx详细教程"><br /><strong>启动nginx</strong></p> <pre><code class="prism language-css">./nginx</code></pre> <p><strong>开放80端口</strong></p> <pre><code class="prism language-css">firewall-cmd --zone=public --add-port=80/tcp --permanent  firewall-cmd --reload</code></pre> <p><strong>访问测试</strong><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/a714c1e52721ca87bcd647831df39732.jpg" alt="centos离线安装nginx详细教程"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-75326.htm">动物医院的电话号码是什么意思啊（动物医院工作时间）</a></p>
+                                        <p>下一个：<a href="/news/article-75999.htm">动物疫苗的定义及分类（动物疫苗的概念）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-52332.htm" title="无货源怎么在闲鱼上卖货（无货源怎么在闲鱼上卖货呢）">无货源怎么在闲鱼上卖货（无货源怎么在闲鱼上卖货呢）</a></li>
+                        <li class="py-2"><a href="/news/article-71976.htm" title="济南宠物收容中心（济南宠物收容站 哪里有）">济南宠物收容中心（济南宠物收容站 哪里有）</a></li>
+                        <li class="py-2"><a href="/news/article-73978.htm" title="宠物回收平台同城的简单介绍">宠物回收平台同城的简单介绍</a></li>
+                        <li class="py-2"><a href="/news/article-52869.htm" title="Docker 安装 Jenkins_在线工具">Docker 安装 Jenkins_在线工具</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-76676.htm" title="宠物医生专业专科学校（宠物医生专业专科学校排名榜）">宠物医生专业专科学校（宠物医生专业专科学校排名榜）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-15-free-node-subscribe.htm" title="Free SSTap节点订阅每天更新22.5M/S免费节点订阅链接">Free SSTap节点订阅每天更新22.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-38787.htm" title="广州领养宠物中心在哪里啊（广州有领养宠物猫的地方吗?）">广州领养宠物中心在哪里啊（广州有领养宠物猫的地方吗?）</a></li>
+                        <li class="py-2"><a href="/news/article-49206.htm" title="猫三联狂犬（猫三联+狂犬）">猫三联狂犬（猫三联+狂犬）</a></li>
+                        <li class="py-2"><a href="/news/article-75999.htm" title="动物疫苗的定义及分类（动物疫苗的概念）">动物疫苗的定义及分类（动物疫苗的概念）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">56</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+        <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">Free SSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="/assets/website/js/frontend/freesstap/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/freesstap/popper.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/bootstrap.min.js"></script>
+    <!-- Plugins -->
+    <script src="/assets/website/js/frontend/freesstap/scrollreveal.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/imgfix.min.js"></script>
+    <!-- Global Init -->
+    <script src="/assets/website/js/frontend/freesstap/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

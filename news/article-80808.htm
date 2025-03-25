@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freesstap.github.io/news/article-80808.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <title>C语言多文件编程详解</title>
+        <meta name="description" content="多文件C语言项目：  1、简单的C语言程序（项目）只有一个C文件(a.c)，编译的时候gcc a.c -o a，执行的时候./a 2、复杂的C语言程序（项目）是由多个C文件构成的。譬如一个项目中包含2" />
+        <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free SSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freesstap.github.io/news/article-80808.htm" />
+    <meta property="og:site_name" content="Free SSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="C语言多文件编程详解" />
+    <meta property="og:image" content="https://freesstap.github.io/uploads/20241110/e193484641c220623268f75d568a3605.webp" />
+        <meta property="og:release_date" content="2025-03-25T08:16:28" />
+    <meta property="og:updated_time" content="2025-03-25T08:16:28" />
+        <meta property="og:description" content="多文件C语言项目：  1、简单的C语言程序（项目）只有一个C文件(a.c)，编译的时候gcc a.c -o a，执行的时候./a 2、复杂的C语言程序（项目）是由多个C文件构成的。譬如一个项目中包含2" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C语言多文件编程详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
+    <link rel="stylesheet" href="/assets/website/css/freesstap/templatemo-softy-pinko.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74P0V8MYK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-74P0V8MYK1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                                                    <span>Free SSTap</span>
+                                                </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h2>C语言多文件编程详解</h2>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>多文件C语言项目：</strong></p> <blockquote> <p>1、简单的C语言程序（项目）只有一个C文件(a.c)，编译的时候gcc a.c -o a，执行的时候./a<br /> 2、复杂的C语言程序（项目）是由多个C文件构成的。譬如一个项目中包含2个c文件（a.c, b.c），编译的时候 gcc a.c b.c -o ab，执行的时候 ./ab</p> <p> 实验：<br /> 在a.c和b.c中分别定义main函数，各自单独编译时没问题；但是两个文件作为一个项目来编译gcc a.c b.c -o ab的时候，就会报错。multiple definition of `main'<br /> 为什么报错？<br /> 因为a.c和b.c这时候组成了一个程序，而一个程序必须有且只能有一个main函数。</p> <p> 为什么需要多文件项目？为什么不在一个.c文件中写完所有的功能？<br /> 因为一个真正的C语言项目是很复杂的，包含很多个函数，写在一个文件中不利于查找、组织、识别，所以人为的将复杂项目中的很多函数，分成了一个一个的功能模块，然后分开放在不同的.c文件中，于是乎有了多文件项目。<br /> 所以，在b.c中定义的一个函数，很可能a.c中就会需要调用。你在任何一个文件中定义的任何一个函数，都有可能被其他任何一个文件中的函数来调用。但是大家最终都是被main函数调用的，有可能是直接调用，也可能是间接调用。</p> <p>多文件项目中，跨文件调用函数：<br /> 在调用函数前，要先声明该被调用函数的原型。只要在调用前声明了该函数，那么调用时就好像这个函数是定义在本文件中的函数一样。</p> </blockquote> <p><strong>跨文件的变量引用：</strong></p> <blockquote> <p>(1)通过实验验证得出结论：在a.c中定义的全局变量，在a.c中可以使用，在b.c中不可以直接使用，编译时报错 error: ‘g_a’ undeclared (first use in this function)<br /> (2)想在b.c中使用a.c中定义的全局变量，有一个间接的使用方式。在a.c中写一个函数，然后函数中使用a.c中定义的该全局变量，然后在b.c中先声明函数，再使用函数。即可达到在b.c中间接引用a.c中变量的目的。<br /> (3)想在b.c中直接引用a.c中定义的全局变量g_a，则必须在b.c中引用前先声明g_a，如何声明变量？ extern int g_a;&nbsp;&nbsp; &nbsp;</p> <p>extern关键字：<br /> extern int g_a;&nbsp;&nbsp; &nbsp;这句话是一个全局变量g_a的声明，这句话告诉编译器，我在外部（程序中<br /> 不是本文件的另一个文件）某个地方定义了一个全局变量 int g_a，而且我现在要在这里引用它<br /> 告诉你编译器一声，不用报错了。</p> <p>问题：<br /> 1、我只在b.c中声明变量，但是别的文件中根本就没有定义这个变量，会怎么样？<br /> 答案是编译报错（连接错误）undefined reference to `g_b'<br /> 2、我在a.c中定义了全局变量g_a，但是b.c中没有声明g_a，引用该变量会怎么样？<br /> 答案是直接抱错了，未定义<br /> 3、在a.c中定义，在b.c中声明，a.c和b.c中都没有引用该变量，会怎么样？<br /> 答案是不会出错。只是白白的定义了一个变量没用，浪费了</p> <p> 结论：不管是函数还是变量，都有定义、声明、引用三要素。其中，定义是创造这个变量或者函数，声明是向编译器交代它的原型，引用是使用这个变量或函数。所以如果没有定义只有声明和引用，编译时一定会报错。undefined reference to `xxx'</p> <p>在一个程序里面，一个函数可以定义一次，引用可以有无数次，声明可以有无数次。因为函数定义或者变量的定义实际上是创造了这个函数/变量，所以只能有一次。（多次创造同名的变量会造成变量名重复，冲突；多次创造同名的函数也会造成函数名重名冲突）。声明是告诉编译器变量/函数的原型，在每个引用了这个全局变量/函数的文件之前都要声明该变量/函数</p> <p>局部变量能不能跨文件使用？<br /> 不能。因为局部变量属于代码块作用域。他的作用域只有他定义的那个函数内部。</p> <p>静态局部变量能不能跨文件使用？<br /> 不能。因为本质上还是个局部变量。</p> <p>讨论跨文件使用问题，只用讨论全局变量和函数就可以了。</p> <p>函数和全局变量在C语言中可以跨文件引用，也就是说他们的连接范围是全局的，具有文件连接属性，总之意思就是全局变量和函数是可以跨文件看到的（直接影响就是，我在a.c和b.c中各自定义了一个函数func，名字相同但是内容不同，编译报错。）。</p> </blockquote></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-80101.htm">北京农大动物医院怎么样知乎（北京农大动物医院最好的医生）</a></p>
+                                        <p>下一个：<a href="/news/article-80809.htm">Git和SVN的区别详解</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-19-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-66805.htm" title="疫苗的分类包括动物疫苗吗（动物疫苗定义）">疫苗的分类包括动物疫苗吗（动物疫苗定义）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-18-node-share-links.htm" title="Free SSTap节点订阅每天更新18.7M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-40270.htm" title="瑞派宠物医院多少家门店（瑞派宠物医院企查查）">瑞派宠物医院多少家门店（瑞派宠物医院企查查）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-4-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新18.5M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-76676.htm" title="宠物医生专业专科学校（宠物医生专业专科学校排名榜）">宠物医生专业专科学校（宠物医生专业专科学校排名榜）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-node-share.htm" title="Free SSTap节点订阅每天更新22.5M/S免费节点订阅链接">Free SSTap节点订阅每天更新22.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-23-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新18.9M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-6-free-node-subscribe.htm" title="Free SSTap节点订阅每天更新21M/S免费节点订阅链接">Free SSTap节点订阅每天更新21M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-40769.htm" title="比熊去泪痕狗粮排行榜（比熊去泪痕的狗粮什么牌子比较好）">比熊去泪痕狗粮排行榜（比熊去泪痕的狗粮什么牌子比较好）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">74</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+        <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">Free SSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="/assets/website/js/frontend/freesstap/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/freesstap/popper.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/bootstrap.min.js"></script>
+    <!-- Plugins -->
+    <script src="/assets/website/js/frontend/freesstap/scrollreveal.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/imgfix.min.js"></script>
+    <!-- Global Init -->
+    <script src="/assets/website/js/frontend/freesstap/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

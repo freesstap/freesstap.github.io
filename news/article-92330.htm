@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freesstap.github.io/news/article-92330.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <title>Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel</title>
+        <meta name="description" content="之前项目已经引入了Feign和Sentinel的依赖，所以接下里先开启Feign对Sentinel的支持 ，如下： 接着我们要为下单接口做容错降级，保证订单服务高可用，下单接口会涉及到商品服务，所以需" />
+        <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free SSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freesstap.github.io/news/article-92330.htm" />
+    <meta property="og:site_name" content="Free SSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel" />
+    <meta property="og:image" content="https://freesstap.github.io/uploads/20241110/567074295187a5bb3ba53182278984e0.webp" />
+        <meta property="og:release_date" content="2025-04-10T08:14:41" />
+    <meta property="og:updated_time" content="2025-04-10T08:14:41" />
+        <meta property="og:description" content="之前项目已经引入了Feign和Sentinel的依赖，所以接下里先开启Feign对Sentinel的支持 ，如下： 接着我们要为下单接口做容错降级，保证订单服务高可用，下单接口会涉及到商品服务，所以需" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
+    <link rel="stylesheet" href="/assets/website/css/freesstap/templatemo-softy-pinko.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74P0V8MYK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-74P0V8MYK1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                                                    <span>Free SSTap</span>
+                                                </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h2>Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel</h2>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> <p>之前项目已经引入了Feign和Sentinel的依赖，所以接下里先开启Feign对Sentinel的支持 ，如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221201/b4dc034a8a8fa3ea29c32e561df640d6.jpg" alt="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel"><br /> 接着我们要为下单接口做容错降级，保证订单服务高可用，下单接口会涉及到商品服务，所以需要对查询商品信息的远程接口做容错，先创建一个容错降级类ProductServiceFallback，它需要实现ProductService类，并重写方法，重写的方法可以理解成是原方法对应的降级方法，一旦下游服务出现问题，这些方法就是兜底方法，如下：</p> <pre><code class="prism language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>mallorder<span class="token punctuation">.</span>fallback<span class="token punctuation">;</span><span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>mallcommon<span class="token punctuation">.</span>domain<span class="token punctuation">.</span>Product<span class="token punctuation">;</span><span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>mallorder<span class="token punctuation">.</span>fegin<span class="token punctuation">.</span>ProductService<span class="token punctuation">;</span><span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Component<span class="token punctuation">;</span><span class="token annotation punctuation">@Component</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">ProductServiceFallback</span><span class="token keyword">implements</span><span class="token class-name">ProductService</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span> Product<span class="token function">findById</span><span class="token punctuation">(</span>Integer pid<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         Product product<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">Product</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         product<span class="token punctuation">.</span><span class="token function">setPid</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span> product<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>然后在@FeignClient注解上加上fallback属性，该属性指定的类就是对应的容错降级类了，如下：<img decoding="async" src="http://img.555519.xyz/uploads/20221201/85660bde2a577e204c716b899a23d98e.jpg" alt="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel"><br /> 在修改下单接口，方便看到测试结果，如下：<img decoding="async" src="http://img.555519.xyz/uploads/20221201/2867eb6a241d75ecff961cd87d48a883.jpg" alt="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel"><br /> 这样一旦远程调用商品微服务,查询商品信息失败，就会返回下单失败的提示。</p> <p>接下来只启动mall-order服务，那么商品微服务没启动，远程调用是肯定是失败的，浏览器访问http://localhost:10020/order/prod/1，结果如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221201/9040b595ad3318735bb0cc32caf80f08.jpg" alt="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel"><br /> Feign整合Sentinel 实现降级的步骤和思路大致就是这样，至于如何更好的返回提示结果，根据项目自定义。</p> <p>不过还存在一个问题，如果想在容错类中拿到具体的错误 ，方便之后的问题排查，应该怎么做？</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-91583.htm">动物接种疫苗多少钱一次打的（动物接种疫苗多少钱一次打的好）</a></p>
+                                        <p>下一个：<a href="/news/article-92331.htm">Sm2国密算法后端加解密demo</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-free-node-subscribe.htm" title="Free SSTap节点订阅每天更新21.5M/S免费节点订阅链接">Free SSTap节点订阅每天更新21.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-92330.htm" title="Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel">Spring Cloud Alibaba入门实践(十九)-Feign整合Sentinel</a></li>
+                        <li class="py-2"><a href="/news/article-75322.htm" title="猫三联2针（猫三联两针之间必须间隔三周吗）">猫三联2针（猫三联两针之间必须间隔三周吗）</a></li>
+                        <li class="py-2"><a href="/news/article-81505.htm" title="宠物粮生产厂家排名前十有哪些（宠物粮食厂家）">宠物粮生产厂家排名前十有哪些（宠物粮食厂家）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新21.9M/S免费节点订阅链接">Free SSTap节点订阅每天更新21.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-80809.htm" title="Git和SVN的区别详解">Git和SVN的区别详解</a></li>
+                        <li class="py-2"><a href="/news/article-75326.htm" title="动物医院的电话号码是什么意思啊（动物医院工作时间）">动物医院的电话号码是什么意思啊（动物医院工作时间）</a></li>
+                        <li class="py-2"><a href="/news/article-71976.htm" title="济南宠物收容中心（济南宠物收容站 哪里有）">济南宠物收容中心（济南宠物收容站 哪里有）</a></li>
+                        <li class="py-2"><a href="/news/article-91582.htm" title="开宠物店前期投入多少（开宠物店前期投入多少钱）">开宠物店前期投入多少（开宠物店前期投入多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-6-free-node-subscribe.htm" title="Free SSTap节点订阅每天更新18.6M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.6M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+        <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">Free SSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="/assets/website/js/frontend/freesstap/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/freesstap/popper.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/bootstrap.min.js"></script>
+    <!-- Plugins -->
+    <script src="/assets/website/js/frontend/freesstap/scrollreveal.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/imgfix.min.js"></script>
+    <!-- Global Init -->
+    <script src="/assets/website/js/frontend/freesstap/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

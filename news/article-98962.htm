@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freesstap.github.io/news/article-98962.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <title>redis持久化问题及最终解决方案</title>
+        <meta name="description" content="redis作为一个缓存,为了达到高性能,数据都是直接放到缓存中的,那么必然会面临一个断电数据丢失的问题.对于流量不高的应用来说,大不了通过数据库,将数据恢复到缓存中; 对于高并发应用来说,缓存宕机丢失" />
+        <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free SSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freesstap.github.io/news/article-98962.htm" />
+    <meta property="og:site_name" content="Free SSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="redis持久化问题及最终解决方案" />
+    <meta property="og:image" content="https://freesstap.github.io/uploads/20241110/567074295187a5bb3ba53182278984e0.webp" />
+        <meta property="og:release_date" content="2025-04-19T08:55:48" />
+    <meta property="og:updated_time" content="2025-04-19T08:55:48" />
+        <meta property="og:description" content="redis作为一个缓存,为了达到高性能,数据都是直接放到缓存中的,那么必然会面临一个断电数据丢失的问题.对于流量不高的应用来说,大不了通过数据库,将数据恢复到缓存中; 对于高并发应用来说,缓存宕机丢失" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="redis持久化问题及最终解决方案">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
+    <link rel="stylesheet" href="/assets/website/css/freesstap/templatemo-softy-pinko.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74P0V8MYK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-74P0V8MYK1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                                                    <span>Free SSTap</span>
+                                                </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h2>redis持久化问题及最终解决方案</h2>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <p>redis作为一个缓存,为了达到高性能,数据都是直接放到缓存中的,那么必然会面临一个断电数据丢失的问题.对于流量不高的应用来说,大不了通过数据库,将数据恢复到缓存中; 对于高并发应用来说,缓存宕机丢失数据,会引发雪崩,击穿,穿透等一系列问题.</p> </h1> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220829/588ed58c3df13ff4301f01b2bd8e3cb6.jpg" alt="redis持久化问题及最终解决方案"></p> <pre><code class="prism language-java"> 工作原理描述<span class="token operator">:</span><span class="token number">1.</span>客户端每接受到一条命令<span class="token punctuation">,</span>执行完后<span class="token punctuation">,</span>将日志数据写到AOF文件中<span class="token number">2.</span>写回AOF文件有三种策略<span class="token punctuation">,</span><span class="token class-name">Always</span><span class="token punctuation">(</span>每个命令执行完<span class="token punctuation">,</span>立即写回磁盘<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token class-name">Everysec</span><span class="token punctuation">(</span>每秒将缓存中的日志写回        磁盘<span class="token punctuation">)</span></code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-98961.htm">前台请求后台用@RequestBody接收数据</a></p>
+                                        <p>下一个：<a href="/news/article-99751.htm">动物防疫预防为主（动物防疫方面）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-87196.htm" title="南京免费领养宠物猫的地方有哪些（南京哪里可以免费领养猫）">南京免费领养宠物猫的地方有哪些（南京哪里可以免费领养猫）</a></li>
+                        <li class="py-2"><a href="/news/article-88639.htm" title="三国杀出场台词语音（三国杀角色台词语音）">三国杀出场台词语音（三国杀角色台词语音）</a></li>
+                        <li class="py-2"><a href="/news/article-98284.htm" title="在定义C++, C通用接口函数时让C++接口支持默认参数">在定义C++, C通用接口函数时让C++接口支持默认参数</a></li>
+                        <li class="py-2"><a href="/news/article-90133.htm" title="被猫咬了一下红色凸起没流血后消失（被猫咬了有红印,过后消失了,要***吗）">被猫咬了一下红色凸起没流血后消失（被猫咬了有红印,过后消失了,要***吗）</a></li>
+                        <li class="py-2"><a href="/news/article-80808.htm" title="C语言多文件编程详解">C语言多文件编程详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新22M/S免费节点订阅链接">Free SSTap节点订阅每天更新22M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-75326.htm" title="动物医院的电话号码是什么意思啊（动物医院工作时间）">动物医院的电话号码是什么意思啊（动物医院工作时间）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-17-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新20.7M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-80100.htm" title="附近宠物收容中心电话（宠物上门回收）">附近宠物收容中心电话（宠物上门回收）</a></li>
+                        <li class="py-2"><a href="/news/article-65561.htm" title="全国十大名牌兽药厂家（中国十大名牌兽药厂家）">全国十大名牌兽药厂家（中国十大名牌兽药厂家）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">56</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+        <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">Free SSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="/assets/website/js/frontend/freesstap/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/freesstap/popper.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/bootstrap.min.js"></script>
+    <!-- Plugins -->
+    <script src="/assets/website/js/frontend/freesstap/scrollreveal.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/imgfix.min.js"></script>
+    <!-- Global Init -->
+    <script src="/assets/website/js/frontend/freesstap/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

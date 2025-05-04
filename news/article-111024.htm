@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freesstap.github.io/news/article-111024.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <title>SpringBoot如何整合spring-retry来实现接口请求重试</title>
+        <meta name="description" content="一、重试机制 由于网络不稳定或网络抖动经常会造成接口请求失败的情况，当我们再去尝试就成功了，这就是重试机制。 本文首发于Java潘老师个人博客：SpringBoot整合spring-retry组件实现" />
+        <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free SSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freesstap.github.io/news/article-111024.htm" />
+    <meta property="og:site_name" content="Free SSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="SpringBoot如何整合spring-retry来实现接口请求重试" />
+    <meta property="og:image" content="https://freesstap.github.io/uploads/20241110/ceae26815c00f61215664fbce0cbb8d8.webp" />
+        <meta property="og:release_date" content="2025-05-04T09:26:47" />
+    <meta property="og:updated_time" content="2025-05-04T09:26:47" />
+        <meta property="og:description" content="一、重试机制 由于网络不稳定或网络抖动经常会造成接口请求失败的情况，当我们再去尝试就成功了，这就是重试机制。 本文首发于Java潘老师个人博客：SpringBoot整合spring-retry组件实现" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringBoot如何整合spring-retry来实现接口请求重试">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
+    <link rel="stylesheet" href="/assets/website/css/freesstap/templatemo-softy-pinko.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74P0V8MYK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-74P0V8MYK1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                                                    <span>Free SSTap</span>
+                                                </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h2>SpringBoot如何整合spring-retry来实现接口请求重试</h2>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <h2>一、重试机制</h2> <p>由于网络不稳定或网络抖动经常会造成接口请求失败的情况，当我们再去尝试就成功了，这就是重试机制。</p> <p><strong><span style="color:#fe2c24;">本文首发于Java潘老师个人博客</span></strong>：SpringBoot整合spring-retry组件实现重试机制</p> <p>其主要目的就是要尽可能地提高请求成功的概率，但一般情况下，我们请求第一次失败，代码运行就抛出异常结束了，如果想再次请求可能还需要手工操作，这非常地不方便，可行性也不佳。因此，Spring框架提供了对重试机制支持，并且在Spring Cloud中可以与Hystrix结合使用，可以避免访问到已经不正常的实例。</p> <h2>二、重试机制要素</h2> <p>重试机制要素如下：</p> <ul> <li>限制重试次数</li> <li>每次重试的时间间隔</li> <li>最终失败结果的报警或事物回滚</li> <li>在特定失败异常事件情况下选择重试</li> </ul> <h2>三、重试机制注意事项</h2> <p>对于非幂等性的方法我们要慎用重试机制，可能会造成意料之外的后果。<br /><em>所谓幂等性：</em>就是用户对于同一操作发起的一次请求或者多次请求的结果是一致的，不会因为多次点击而产生了副作用。</p> <h2>四、SpringBoot整合spring-retry</h2> <p>下面我们就来看下，我们应该如何使用SpringBoot来整合spring-retry组件实现重试机制。</p> <h3>1）添加依赖</h3> <p>首先我们在SpringBoot项目中的<code>pom.xml</code>添加相关依赖，如下：</p> <pre><code>&lt;!-- 重试相关依赖包 --&gt; &lt;dependency&gt;     &lt;groupId&gt;org.springframework.retry&lt;/groupId&gt;     &lt;artifactId&gt;spring-retry&lt;/artifactId&gt;     &lt;version&gt;1.2.4.RELEASE&lt;/version&gt; &lt;/dependency&gt;   &lt;dependency&gt;     &lt;groupId&gt;org.aspectj&lt;/groupId&gt;     &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;     &lt;version&gt;1.9.4&lt;/version&gt; &lt;/dependency&gt;</code></pre> <h3>2）添加@EnableRetry注解</h3> <p>在主启动类Application上添加@EnableRetry注解，实现对重试机制的支持</p> <pre><code>@SpringBootApplication @EnableRetry public class RetryApplication {       public static void main(String[] args) {           SpringApplication.run(RetryApplication.class, args);     }   }</code></pre> <p>注意：@EnableRetry也可以使用在配置类、ServiceImpl类、方法上</p> <h3>3）添加@Retryable注解</h3> <p>我们针对需要实现重试的方法上添加<code>@Retryable</code>注解，使该方法可以实现重试，这里我列出ServiceImpl中的一个方法：</p> <pre><code>@Service public class RetryServiceImpl implements RetryService {       @Retryable(value = Exception.class, maxAttempts = 3, backoff = @Backoff(delay = 2000,multiplier = 1.5))     public String testRetry() throws Exception {           System.out.println("开始执行代码："+ LocalTime.now());         int code = 0;         // 模拟一直失败         if(code == 0){            // 这里可以使自定义异常，@Retryable中value需与其一致             throw new Exception("代码执行异常");         }         System.out.println("代码执行成功");         return "success";     } }</code></pre> <p>说明：@Retryable配置元数据情况：<br /> value ：针对指定抛出的异常类型，进行重试，这里指定的是Exception<br /> maxAttempts ：配置最大重试次数，这里配置为3次（包含第一次和最后一次）<br /> delay： 第一次重试延迟间隔，这里配置的是2s<br /> multiplier ：每次重试时间间隔是前一次几倍，这里是1.5倍</p> <h3>4）Controller测试代码</h3> <pre><code>@RestController @RequestMapping("/test") public class TestController {     @Autowired     private RetryService retryService;       @GetMapping("/retry")     public String testRetry() throws Exception {         return retryService.testRetry();     } }</code></pre> <h3>5）发送请求</h3> <p>发送请求后，我们发现后台打印情况，确实重试了3次，并且在最后一次重试失败的情况下，才抛出异常，具体如下（可以注意下时间间隔）：</p> <p style="text-align:center;"><img decoding="async" alt="SpringBoot整合spring-retry组件实现重试机制" src="http://img.555519.xyz/uploads3/20220821/3d3f90f3b5d8c750a4d8e7df74794a12.jpg"></p> <h3>6）补充：@Recover</h3> <p>一般情况下，我们重试最大设置的次数后，仍然失败抛出异常，我们会通过全局异常处理类进行统一处理，但是我们其实也可以自行处理，可以通过<code>@Recover</code>注解来实现，具体如下：</p> <pre><code>@Service public class RetryServiceImpl implements RetryService {       @Retryable(value = Exception.class, maxAttempts = 3, backoff = @Backoff(delay = 2000,multiplier = 1.5))     public String testRetry() throws Exception {           System.out.println("开始执行代码："+ LocalTime.now());         int code = 0;         if(code == 0){             // 这里可以使自定义异常，@Retryable中value需与其一致             throw new Exception("代码执行异常");         }         System.out.println("代码执行成功");         return "success";     }       /**      * 最终重试失败处理      * @param e      * @return      */     @Recover     public String recover(Exception e){           System.out.println("代码执行重试后依旧失败");         return "fail";     } }</code></pre> <p>注意：<br /> 1）@Recover的方法中的参数异常类型需要与重试方法中一致<br /> 2）该方法的返回值类型与重试方法保持一致<br /> 再次测试如下（发现不会再抛出异常）：</p> <p style="text-align:center;"><img decoding="async" alt="SpringBoot整合spring-retry组件实现重试机制" src="http://img.555519.xyz/uploads3/20220821/2702a242d8e572c407d648d6925b8313.jpg"></p> <p><strong><span style="color:#fe2c24;">本文首发于Java潘老师个人博客</span></strong>：SpringBoot整合spring-retry组件实现重试机制</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-110174.htm">宠物粮行业分析报告模板怎么写（宠物粮行业环境分析）</a></p>
+                                        <p>下一个：<a href="/news/article-111025.htm">ElasticSearch学习：springboot集成ElasticSearch</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-98287.htm" title="宠物领养网站设计的需求调研（领养宠物app的项目策划书）">宠物领养网站设计的需求调研（领养宠物app的项目策划书）</a></li>
+                        <li class="py-2"><a href="/news/article-97513.htm" title="云南农大动物医院肖院长简历图片（云南农大动物医院肖院长简历图片大全）">云南农大动物医院肖院长简历图片（云南农大动物医院肖院长简历图片大全）</a></li>
+                        <li class="py-2"><a href="/news/article-90133.htm" title="被猫咬了一下红色凸起没流血后消失（被猫咬了有红印,过后消失了,要***吗）">被猫咬了一下红色凸起没流血后消失（被猫咬了有红印,过后消失了,要***吗）</a></li>
+                        <li class="py-2"><a href="/news/article-100542.htm" title="vue3及与vue2的区别总结（部分）">vue3及与vue2的区别总结（部分）</a></li>
+                        <li class="py-2"><a href="/news/article-105976.htm" title="实现单例模式的八种方法">实现单例模式的八种方法</a></li>
+                        <li class="py-2"><a href="/news/article-102709.htm" title="我们如何从MySQL表中获取特定行作为输出？">我们如何从MySQL表中获取特定行作为输出？</a></li>
+                        <li class="py-2"><a href="/news/article-93058.htm" title="SpringBoot+Lombok+Builder实现任意个数属性的对象构造">SpringBoot+Lombok+Builder实现任意个数属性的对象构造</a></li>
+                        <li class="py-2"><a href="/news/article-102710.htm" title="动物疫苗可以自己打吗多少钱一针啊图片（动物打疫苗 人还打吗）">动物疫苗可以自己打吗多少钱一针啊图片（动物打疫苗 人还打吗）</a></li>
+                        <li class="py-2"><a href="/news/article-99751.htm" title="动物防疫预防为主（动物防疫方面）">动物防疫预防为主（动物防疫方面）</a></li>
+                        <li class="py-2"><a href="/news/article-108474.htm" title="宠物粮厂家招聘最新信息查询电话（宠物粮食公司）">宠物粮厂家招聘最新信息查询电话（宠物粮食公司）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">82</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+        <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">Free SSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="/assets/website/js/frontend/freesstap/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/freesstap/popper.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/bootstrap.min.js"></script>
+    <!-- Plugins -->
+    <script src="/assets/website/js/frontend/freesstap/scrollreveal.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/imgfix.min.js"></script>
+    <!-- Global Init -->
+    <script src="/assets/website/js/frontend/freesstap/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

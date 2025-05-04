@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freesstap.github.io/news/article-111025.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <title>ElasticSearch学习：springboot集成ElasticSearch</title>
+        <meta name="description" content="跟其他的菲关系类型数据库一样集成springboot，在生成代码时，勾选web和非关系数据库里面的ElasticSearch就可以。 demo的git地址我放在下面：git es demo 代码 这里" />
+        <link rel="icon" href="/assets/website/img/freesstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free SSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freesstap.github.io/news/article-111025.htm" />
+    <meta property="og:site_name" content="Free SSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="ElasticSearch学习：springboot集成ElasticSearch" />
+    <meta property="og:image" content="https://freesstap.github.io/uploads/20241110/16de02688387309ff623684874c15834.webp" />
+        <meta property="og:release_date" content="2025-05-04T09:26:47" />
+    <meta property="og:updated_time" content="2025-05-04T09:26:47" />
+        <meta property="og:description" content="跟其他的菲关系类型数据库一样集成springboot，在生成代码时，勾选web和非关系数据库里面的ElasticSearch就可以。 demo的git地址我放在下面：git es demo 代码 这里" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ElasticSearch学习：springboot集成ElasticSearch">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/freesstap/font-awesome.css">
+    <link rel="stylesheet" href="/assets/website/css/freesstap/templatemo-softy-pinko.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74P0V8MYK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-74P0V8MYK1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                                                    <span>Free SSTap</span>
+                                                </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h2>ElasticSearch学习：springboot集成ElasticSearch</h2>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>跟其他的菲关系类型数据库一样集成springboot，在生成代码时，勾选web和非关系数据库里面的ElasticSearch就可以。</p> <p>demo的git地址我放在下面：<br />git es demo 代码</p> <p>这里我主要提两个部分<br /> (一)Java端返回结果警告<br /> 一般来说是虑ES security的设置，实际上7.13就开始了加强这个。ES 8直接默认让你去设置security。</p> <p>我这边用的是7.17版本，设置的是在有yml上：</p> <pre><code>xpack.security.enabled: false</code></pre> <p>（二）关于配置类和测试方法类<br /> 配置类</p> <pre><code>package com.es.example.demo.config;   import org.apache.http.HttpHost; import org.elasticsearch.client.RestClient; import org.elasticsearch.client.RestHighLevelClient; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  /**  * @Author: zhangpeng  * @Date: 2022/2/16 10:56  */ @Configuration public class ElasticSearchClientConfig {      @Bean     public RestHighLevelClient restHighLevelClient() {         RestHighLevelClient client = new RestHighLevelClient(                 RestClient.builder(                         new HttpHost("127.0.0.1", 9200, "http")                 )         );          return client;     }   }</code></pre> <p>测试方法类，主要是多种方法</p> <pre><code>package com.es.example.demo;  import com.alibaba.fastjson.JSON; import com.es.example.demo.DO.User; import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest; import org.elasticsearch.action.bulk.BulkRequest; import org.elasticsearch.action.bulk.BulkResponse; import org.elasticsearch.action.delete.DeleteRequest; import org.elasticsearch.action.delete.DeleteResponse; import org.elasticsearch.action.get.GetRequest; import org.elasticsearch.action.get.GetResponse; import org.elasticsearch.action.index.IndexRequest; import org.elasticsearch.action.index.IndexResponse; import org.elasticsearch.action.search.SearchRequest; import org.elasticsearch.action.search.SearchResponse; import org.elasticsearch.action.support.master.AcknowledgedResponse; import org.elasticsearch.action.update.UpdateRequest; import org.elasticsearch.action.update.UpdateResponse; import org.elasticsearch.client.RequestOptions; import org.elasticsearch.client.RestHighLevelClient; import org.elasticsearch.client.indices.CreateIndexRequest; import org.elasticsearch.client.indices.CreateIndexResponse; import org.elasticsearch.client.indices.GetIndexRequest; import org.elasticsearch.common.unit.TimeValue; import org.elasticsearch.common.xcontent.XContentType; import org.elasticsearch.index.query.QueryBuilders; import org.elasticsearch.index.query.TermQueryBuilder; import org.elasticsearch.search.SearchHit; import org.elasticsearch.search.builder.SearchSourceBuilder; import org.elasticsearch.search.fetch.subphase.FetchSourceContext; import org.junit.jupiter.api.Test; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.beans.factory.annotation.Qualifier; import org.springframework.boot.test.context.SpringBootTest;  import java.io.IOException; import java.util.ArrayList; import java.util.concurrent.TimeUnit;  @SpringBootTest class EsdemoApplicationTests {      @Test     void contextLoads() {     }        public static final String INDEX = "zp_test_index";      @Autowired     //这个读取@bean要不用人家的原名或者在配置类搞个别名，要不在使用的地方指定好     @Qualifier(value = "restHighLevelClient")     private RestHighLevelClient client;      // 创建索引     @Test     void testCreateIndex() throws IOException {         // 1. 创建索引请求         CreateIndexRequest request = new CreateIndexRequest(INDEX);         // 2. 客户端执行请求， IndicesClient，请求后获得响应         CreateIndexResponse createIndexResponse = client.indices().create(request, RequestOptions.DEFAULT);         System.out.println(createIndexResponse);     }      // 测试索引存在     @Test     void testExistsIndex() throws IOException {         GetIndexRequest request = new GetIndexRequest(INDEX);         boolean exists = client.indices().exists(request, RequestOptions.DEFAULT);         System.out.println(exists);     }      // 删除索引     @Test     void testDeleteIndex() throws IOException {         DeleteIndexRequest request = new DeleteIndexRequest(INDEX);         AcknowledgedResponse acknowledgedResponse = client.indices().delete(request, RequestOptions.DEFAULT);         System.out.println(acknowledgedResponse.isAcknowledged());     }      // 添加文档     @Test     void testAddDocument() throws IOException {         User user = new User("张三", 28);         IndexRequest request = new IndexRequest(INDEX);         // 规则 PUT /index/_doc/1         request.id("1");         request.timeout(TimeValue.timeValueSeconds(1));         // 将数据放入请求 json         request.source(JSON.toJSONString(user), XContentType.JSON);         IndexResponse response = client.index(request, RequestOptions.DEFAULT);         System.out.println(response.toString());         System.out.println(response.status());     }      //注意这里要是发现获取返回结果提示警告，拿不到结果，要考虑ES security的设置      // 获取文档 判断是否存在 GET /index/_doc/1     @Test     void testIsExists() throws IOException {         GetRequest request = new GetRequest(INDEX, "1");         // 不获取返回的 _source 的上下文了         request.fetchSourceContext(new FetchSourceContext(false));         request.storedFields("_none_");          boolean exists = client.exists(request, RequestOptions.DEFAULT);         System.out.println(exists);     }      // 获取文档      /**      * 返回结果：      * {"age":28,"name":"狂神说"}      * {"_index":"xiaofan_test_index","_type":"_doc","_id":"1","_version":1,"_seq_no":0,"_primary_term":1,"found":true,"_source":{"age":28,"name":"狂神说"}}      */     @Test     void testGetDocument() throws IOException {         GetRequest request = new GetRequest(INDEX, "1");         GetResponse response = client.get(request, RequestOptions.DEFAULT);         System.out.println(response.getSourceAsString());         System.out.println(response);     }      // 更新文档     @Test     void testUpdateDocument() throws IOException {         UpdateRequest request = new UpdateRequest(INDEX, "1");         request.timeout("1s");          User user = new User("法外狂徒格雷福斯", 18);         request.doc(JSON.toJSONString(user), XContentType.JSON);          UpdateResponse updateResponse = client.update(request, RequestOptions.DEFAULT);         System.out.println(updateResponse);     }      // 删除文档     @Test     void testDeleteDocument() throws IOException {         DeleteRequest request = new DeleteRequest(INDEX, "1");         request.timeout("1s");          DeleteResponse deleteResponse = client.delete(request, RequestOptions.DEFAULT);         System.out.println(deleteResponse);      }      // 批量插入数据（修改，删除类似操作）     @Test     void testBulkRequest() throws IOException {         BulkRequest request = new BulkRequest();         request.timeout("10s");          ArrayList&lt;User&gt; users = new ArrayList&lt;&gt;();         users.add(new User("kuangshen1", 21));         users.add(new User("kuangshen2", 22));         users.add(new User("kuangshen3", 23));         users.add(new User("xiaofan1", 18));         users.add(new User("xiaofan2", 19));          // 批处理请求， 修改，删除，只要在这里修改相应的请求就可以         for (int i = 0; i &lt; users.size(); i++) {             request.add(new IndexRequest(INDEX)                     .id(String.valueOf(i + 1))                     .source(JSON.toJSONString(users.get(i)), XContentType.JSON));         }          BulkResponse bulkResponse = client.bulk(request, RequestOptions.DEFAULT);         //是否失败，返回false表示成功         System.out.println(bulkResponse.hasFailures());     }      // 查询文档     @Test     void testSearch() throws IOException {         SearchRequest searchRequest = new SearchRequest(INDEX);         // 构建搜索条件         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();          // 查询条件， 可以使用QueryBuilders工具类实现         // QueryBuilders.termQuery 精确         // QueryBuilders.matchLLQuery() 匹配所有         TermQueryBuilder termQueryBuilder = QueryBuilders.termQuery("name", "kuangshen1");         // MatchAllQueryBuilder matchAllQueryBuilder = QueryBuilders.matchAllQuery();         sourceBuilder.query(termQueryBuilder);         sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));          searchRequest.source(sourceBuilder);          SearchResponse searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);         System.out.println(JSON.toJSON(searchResponse.getHits()));         System.out.println("======================================");         for (SearchHit documentFields : searchResponse.getHits().getHits()) {             System.out.println(documentFields.getSourceAsMap());         }      }  }</code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-111024.htm">SpringBoot如何整合spring-retry来实现接口请求重试</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-85762.htm" title="昆明宠物门诊报销政策（昆明宠物医院24小时急诊）">昆明宠物门诊报销政策（昆明宠物医院24小时急诊）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-7-free-node-subscribe.htm" title="Free SSTap节点订阅每天更新21.9M/S免费节点订阅链接">Free SSTap节点订阅每天更新21.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-108474.htm" title="宠物粮厂家招聘最新信息查询电话（宠物粮食公司）">宠物粮厂家招聘最新信息查询电话（宠物粮食公司）</a></li>
+                        <li class="py-2"><a href="/news/article-101159.htm" title="VUE element-ui 之table表格第一行插入输入框">VUE element-ui 之table表格第一行插入输入框</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-27-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-108480.htm" title="宠物领养回访持续多久啊 宠物领养回访持续多久啊怎么写">宠物领养回访持续多久啊 宠物领养回访持续多久啊怎么写</a></li>
+                        <li class="py-2"><a href="/news/article-104338.htm" title="动物防疫站周末休息吗 动物防疫站周末休息吗北京">动物防疫站周末休息吗 动物防疫站周末休息吗北京</a></li>
+                        <li class="py-2"><a href="/news/article-87197.htm" title="猫粮品牌十大排行2023最新（央视评测十大放心猫粮品牌）">猫粮品牌十大排行2023最新（央视评测十大放心猫粮品牌）</a></li>
+                        <li class="py-2"><a href="/news/article-91582.htm" title="开宠物店前期投入多少（开宠物店前期投入多少钱）">开宠物店前期投入多少（开宠物店前期投入多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-105161.htm" title="北京免费领养幼犬（北京领养狗的有哪些地方）">北京免费领养幼犬（北京领养狗的有哪些地方）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">82</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+        <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">Free SSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="/assets/website/js/frontend/freesstap/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/freesstap/popper.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/bootstrap.min.js"></script>
+    <!-- Plugins -->
+    <script src="/assets/website/js/frontend/freesstap/scrollreveal.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/freesstap/imgfix.min.js"></script>
+    <!-- Global Init -->
+    <script src="/assets/website/js/frontend/freesstap/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

@@ -315,14 +315,14 @@ A4：默认情况下可以。但你可开启“阅后即焚”或“禁止转发
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 的伪装域名如何正确配置？</h5></div>
+    <div class="panel-heading"><h5>Hiddify Next 的用户管理可以分组吗？</h5></div>
     <div class="panel-body">
-        伪装域名必须真实可访问且证书有效，否则客户端无法建立连接。正确配置可隐藏真实流量特征，降低被封锁和检测风险，提高节点安全性和长期可用性。<hr />    </div>
+        支持用户分组管理，可为不同组设置独立带宽、流量配额和节点访问权限。分组管理便于大规模用户维护，确保每个组的网络资源合理分配，提升整体管理效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 节点分组功能有什么优势？</h5></div>
+    <div class="panel-heading"><h5>Hiddify Next 如何为不同用户设置流量限制？</h5></div>
     <div class="panel-body">
-        分组管理可按延迟、地区或用途分类节点，并结合策略组实现自动分流。用户可快速选择最优节点，提高访问速度和稳定性，方便管理大量节点并优化维护效率。<hr />    </div>
+        管理员可为每个用户设置独立带宽限制和流量配额。超过限制时，可自动降速或阻止访问，确保服务器资源合理分配，避免单用户占用过多带宽，提升整体网络效率和公平性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 如何通过策略组优化访问速度？</h5></div>
@@ -335,9 +335,9 @@ A4：默认情况下可以。但你可开启“阅后即焚”或“禁止转发
         Sing-box 支持按域名匹配流量，将不同网站或应用流量分配到指定节点。结合策略组自动切换低延迟节点，可优化访问速度，保证网络稳定性并提高整体体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 的用户管理可以分组吗？</h5></div>
+    <div class="panel-heading"><h5>VLESS 在高封锁环境下的优势是什么？</h5></div>
     <div class="panel-body">
-        支持用户分组管理，可为不同组设置独立带宽、流量配额和节点访问权限。分组管理便于大规模用户维护，确保每个组的网络资源合理分配，提升整体管理效率。<hr />    </div>
+        VLESS 去掉了内置加密，依赖 TLS 层安全，减少被 DPI 检测的特征。结合 XTLS 或 Reality 模式，可以更好地隐藏流量，提高在高封锁网络中的稳定性与隐蔽性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Shadowrocket 的分流规则如何实现广告拦截？</h5></div>
@@ -345,19 +345,19 @@ A4：默认情况下可以。但你可开启“阅后即焚”或“禁止转发
         通过配置规则，将广告域名或请求路径匹配到黑名单策略，使请求直接阻断或重定向到本地地址。这样用户浏览网页或使用应用时可自动屏蔽大部分广告内容。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 的伪装域名如何正确配置？</h5></div>
+    <div class="panel-body">
+        伪装域名必须真实可访问且证书有效，否则客户端无法建立连接。正确配置可隐藏真实流量特征，降低被封锁和检测风险，提高节点安全性和长期可用性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 多路复用对短连接性能有何提升？</h5></div>
     <div class="panel-body">
         多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接场景，如游戏和即时通讯，可提高吞吐量和连接稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 在高封锁环境下的优势是什么？</h5></div>
+    <div class="panel-heading"><h5>Mihomo 节点分组功能有什么优势？</h5></div>
     <div class="panel-body">
-        VLESS 去掉了内置加密，依赖 TLS 层安全，减少被 DPI 检测的特征。结合 XTLS 或 Reality 模式，可以更好地隐藏流量，提高在高封锁网络中的稳定性与隐蔽性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 如何为不同用户设置流量限制？</h5></div>
-    <div class="panel-body">
-        管理员可为每个用户设置独立带宽限制和流量配额。超过限制时，可自动降速或阻止访问，确保服务器资源合理分配，避免单用户占用过多带宽，提升整体网络效率和公平性。<hr />    </div>
+        分组管理可按延迟、地区或用途分类节点，并结合策略组实现自动分流。用户可快速选择最优节点，提高访问速度和稳定性，方便管理大量节点并优化维护效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何安全地在服务器上部署 V2Ray（最小权限原则）？</h5></div>
@@ -391,16 +391,16 @@ A4：默认情况下可以。但你可开启“阅后即焚”或“禁止转发
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-4-11-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新20.9M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-26-node-share-links.htm" title="Free SSTap节点订阅每天更新21.1M/S免费节点订阅链接">Free SSTap节点订阅每天更新21.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-14-node-share.htm" title="Free SSTap节点订阅每天更新21.4M/S免费节点订阅链接">Free SSTap节点订阅每天更新21.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-4-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新21.1M/S免费节点订阅链接">Free SSTap节点订阅每天更新21.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-9-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新18.1M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-2-free-node-subscribe.htm" title="Free SSTap节点订阅每天更新18.7M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.7M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-12-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新19.1M/S免费节点订阅链接">Free SSTap节点订阅每天更新19.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-22-node-share.htm" title="Free SSTap节点订阅每天更新19.8M/S免费节点订阅链接">Free SSTap节点订阅每天更新19.8M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-17-free-node-subscribe-links.htm" title="Free SSTap节点订阅每天更新22.3M/S免费节点订阅链接">Free SSTap节点订阅每天更新22.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-10-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新19.4M/S免费节点订阅链接">Free SSTap节点订阅每天更新19.4M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-26-node-share.htm" title="Free SSTap节点订阅每天更新21.3M/S免费节点订阅链接">Free SSTap节点订阅每天更新21.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-1-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新22M/S免费节点订阅链接">Free SSTap节点订阅每天更新22M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-30-node-share.htm" title="Free SSTap节点订阅每天更新20.3M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-24-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新21.4M/S免费节点订阅链接">Free SSTap节点订阅每天更新21.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-2-node-share.htm" title="Free SSTap节点订阅每天更新18.1M/S免费节点订阅链接">Free SSTap节点订阅每天更新18.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-21-free-subscribe-node.htm" title="Free SSTap节点订阅每天更新20.1M/S免费节点订阅链接">Free SSTap节点订阅每天更新20.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-18-free-high-speed-nodes.htm" title="Free SSTap节点订阅每天更新21M/S免费节点订阅链接">Free SSTap节点订阅每天更新21M/S免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -412,10 +412,10 @@ A4：默认情况下可以。但你可开启“阅后即焚”或“禁止转发
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>
